@@ -139,6 +139,9 @@ function get_category_tags($args) {
 // Adding Thumbnails
 add_theme_support( 'post-thumbnails' );
 
+// Add thumbnail size for "Film" projects
+add_image_size( 'film-thumb', 200, 300, true );
+
 // Add "last" class to last post in loop
 add_filter('post_class', 'my_post_class');
 
