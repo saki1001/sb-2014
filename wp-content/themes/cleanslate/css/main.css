@@ -106,7 +106,8 @@ a, a:link, a:visited {
 }
 
 a:active, a:hover {
-    color: #006699;
+/*    color: #E66168;*/
+	color: #E66168;
     text-decoration: none;
 }
 
@@ -125,14 +126,22 @@ header {
 }
 
 header #logo {
-    position: absolute;
+    width: 100%;
+	border-bottom:3px #CCC dotted;
 }
 
 header h1 {
+	text-transform:uppercase;
+	margin:10px 0;
+}
+
+header h1 .blog-name {
     font-size: 2.8em;
-    font-weight: bold;
-    width: 100%;
-    padding-top: 10px;
+}
+
+header h1 .description {
+    font-size: 1.6em;
+	margin-left:10px;
 }
 
 header h1 a {
@@ -212,7 +221,7 @@ header h1 a {
 #main-menu .current-menu-item a,
 #main-menu .current-menu-ancestor a,
 #main-menu .current-post-ancestor a {
-    color: #006699;
+    color: #E66168;
 }
 
 #main-menu .current-menu-item .sub-menu a,
@@ -224,12 +233,12 @@ header h1 a {
 #main-menu .current-menu-item .sub-menu a:hover,
 #main-menu .current-menu-ancestor ul li a:hover,
 #main-menu .current-post-ancestor ul li a:hover {
-    color: #006699;
+    color: #E66168;
 }
 
 #main-menu .current-menu-ancestor ul li.current-menu-item a,
 #main-menu .current-post-ancestor ul li.current-post-parent a {
-    color: #006699;
+    color: #E66168;
 }
 
 /* General
@@ -281,7 +290,7 @@ header h1 a {
 }
 
 #main #sidebar ul li.current a {
-    color: #006699;
+    color: #E66168;
 }
 
 #main #sidebar ul li.current a:hover {
@@ -448,7 +457,7 @@ body.archive.tag #main #content {
 }
 
 #content .list-footer .current {
-    color:#006699;
+    color:#E66168;
 }
 
 /* Category ---- Portfolio Thumbnail
@@ -471,7 +480,7 @@ body.category #content .thumb-container figcaption {
     width: 350px;
     height: 200px;
     margin: 0;
-    background-color: #006699;
+    background-color: #E66168;
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
@@ -1074,4 +1083,25 @@ article.comment {
 }
 .widget-area .widget_search input {
     float: left;
+}
+
+
+/* New Styles
+-------------------------------------------------------------- */
+.media {
+	height:600px;
+}
+
+.media .video,
+.media .photos {
+	display:none;
+}
+
+.media .video.active-display,
+.media .photos.active-display {
+	display:block;
+}
+
+.media .photos .photo {
+	position:absolute;
 }

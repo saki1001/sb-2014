@@ -10,28 +10,11 @@
 <?php get_header(); ?>
         
     <section id="content">
-        
         <?php
             if ( have_posts() ) :
+                // Homepage slideshow
+                do_action('slideshow_deploy', '35');
                 
-                while ( have_posts() ) : the_post();
-                    get_sidebar();
-                endwhile;
-                
-                rewind_posts();
-        ?>
-        
-        <div id="articles">
-        
-        <?php
-                while ( have_posts() ) : the_post();
-                    get_template_part( 'content', get_post_format() );
-                endwhile;
-        ?>
-        
-        </div>
-        
-        <?php
             else :
             // Content Not Found Template
             include('content-not-found.php');

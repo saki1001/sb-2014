@@ -14,6 +14,9 @@
 get_header(); ?>
         
         <section id="content">
+            <div class="bbq-content">
+                <div class="bbq-loading" style="display: none;">Loading content...</div>
+            </div>
             
         <?php
             // Query Artist Post Type
@@ -26,13 +29,19 @@ get_header(); ?>
             $project_query = new WP_Query( $args );
             
             if ( $project_query->have_posts() ) :
-                
+?>
+                <div class="projects">
+<?php
                 while ( $project_query->have_posts() ) : $project_query->the_post();
-        ?>
-                    <a href="<?php the_permalink(); ?>" data-title="<?php the_title(); ?>"><?php the_post_thumbnail('film_thumb'); ?></a>
-        <?php
+?>
+                    <div class="project">
+                    <a href="#<?php echo $post->post_name; ?>" data-id="<?php echo $post->ID; ?>"><?php the_post_thumbnail('film-thumb'); ?></a>
+                    </div>
+<?php
                 endwhile;
-                
+?>
+                </div>
+<?php
             else :
             // Content Not Found Template
             include('content-not-found.php');

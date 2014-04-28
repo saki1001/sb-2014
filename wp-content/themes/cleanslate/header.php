@@ -47,7 +47,6 @@
         
         <?php /*Custom JS Files*/ ?>
             <script type="text/javascript">
-                var $j = jQuery.noConflict();
                 var templateDirectoryUrl = '<?php echo get_template_directory_uri(); ?>';
             </script>
             <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js" type="text/javascript"></script> -->
@@ -62,7 +61,10 @@
         <header id="branding" role="banner">
             <div id="logo">
                 <h1 id="site-title">
-                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span></a>
+                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                        <span class="blog-name"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span>
+                        <span class="description"><?php echo esc_attr( get_bloginfo( 'description', 'display' ) ); ?></span>
+                    </a>
                 </h1>
             </div>
             

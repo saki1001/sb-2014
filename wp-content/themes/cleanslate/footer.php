@@ -21,5 +21,11 @@
 
 <?php wp_footer(); ?>
 
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/FitVid/jquery.fitvids.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/Slides-SlidesJS-3/source/jquery.slides.min.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-bbq-1.2.1.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/hashchange.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
+
 </body>
 </html>
