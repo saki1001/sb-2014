@@ -10,7 +10,7 @@ jQuery(function($) {
       // gets the url from the hash and displays either our cached content or fetches
       // new content to be displayed.
       $(window).bind( 'hashchange', function(e) {
-          console.log(cache);
+          // console.log(cache);
         // Get the hash (fragment) as a string, with any leading # removed. Note that
         // in jQuery 1.4, you should use e.fragment instead of $.param.fragment().
         var url = $.param.fragment();
@@ -51,33 +51,21 @@ jQuery(function($) {
               $( '.bbq-loading' ).hide();
               
               // Unbind former ones
-              $('#media-toggle a').unbind( 'click', toggleMediaDisplay );
+              // $(this).find('.media-toggle a').unbind( 'click', toggleMediaDisplay );
               
               // Rebind all + new ones
-              $('#media-toggle a').bind( 'click', toggleMediaDisplay );
+              $(this).find('.media-toggle a').bind( 'click', toggleMediaDisplay );
               
               var videoID = '#' + $(this).find('.video').attr('id');
               var galleryID = '#' + $(this).find('.photos').attr('id');
               
               // FitVid.js
-              $(videoID).fitVids();
+              $(videoID).fitVids().hide();
               
-              // Slideshow
-              $(galleryID).slidesjs({
-                width: 940,
-                height: 528,
-                navigation: {
-                  effect: "fade"
-                },
-                pagination: {
-                  effect: "fade"
-                },
-                effect: {
-                  fade: {
-                    speed: 400
-                  }
-                }
-              }).hide();
+              $(this).find('.photos').cycle();
+              $(this).find('.photos').customSlideActions('bind');
+              
+              $(this).find('article').slideDown();
             });
         }
       })
@@ -89,16 +77,19 @@ jQuery(function($) {
       var toggleMediaDisplay = function (e) {
           e.preventDefault();
           
-          var currentDisplay = $('.media').attr('data-toggle-state');
+          var currentContainer = $(this).parentsUntil('.bbq-item').find('.media');
+          var currentDisplay = currentContainer.attr('data-toggle-state');
+          var currentAction = $(this).attr('data-toggle-value');
           
-          if( $(this).attr('id') === 'show-video' && currentDisplay != 'video' ) {
-              $('.media').attr('data-toggle-state', 'video');
-              $('.active-display').hide().removeClass('active-display');
-              $('.video').addClass('active-display').show();
-          } else if ( $(this).attr('id') === 'show-photos' && currentDisplay != 'photos' ) {
-              $('.media').attr('data-toggle-state', 'photos');
-              $('.active-display').hide().removeClass('active-display');
-              $('.photos').addClass('active-display').show();
+          if( currentAction === 'show-video' && currentDisplay != 'video' ) {
+              currentContainer.attr('data-toggle-state', 'video');
+              currentContainer.find('.active-display').hide().removeClass('active-display');
+              currentContainer.find('.video').addClass('active-display').show();
+              
+          } else if ( currentAction === 'show-photos' && currentDisplay != 'photos' ) {
+              currentContainer.attr('data-toggle-state', 'photos');
+              currentContainer.find('.active-display').hide().removeClass('active-display');
+              currentContainer.find('.photos').addClass('active-display').show();
           }
           
           return false;
