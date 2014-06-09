@@ -14,7 +14,9 @@
 </div><!-- #page -->
 
 <footer id="footer" role="contentinfo">
-    <div>Susan Block &copy;2014</div>
+    <div>
+        <p>Susan Block &copy;2014</p>
+    </div>
 </footer><!-- #footer -->
 
 <?php wp_footer(); ?>

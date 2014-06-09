@@ -70,7 +70,7 @@ http://ryanfait.com/
 }
 
 #footer div {
-    padding: 150px 0 10px;
+    padding: 130px 0 10px;
 }
 
 header,
@@ -371,25 +371,240 @@ body.home #content {
     position: relative;
 }
 
-body.home #gallery-home {
+/*body.home #gallery-home {
     width:100%;
 }
 
 body.home #gallery-home h2 {
     font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
     font-weight: normal;
+}*/
+
+body.home .slideshow_container .slideshow_description_box {
+    font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+	padding: 25px 0 30px;
+	text-align:left;
+}
+
+body.home .slideshow_container .slideshow_description_box div.slideshow_title {
+	font-size: 1.9em;
+	margin-bottom:10px;
+	text-align: left;
+}
+
+body.home .slideshow_container .slideshow_description_box div.slideshow_description {
+	font-size: 1.6em;
+	text-align: left;
 }
 
 /* Project Category
 -------------------------------------------------------------- */
 body.page .projects .project {
 	width:20%;
+	margin-left:2%;
+	position:relative;
 	float:left;
+}
+
+body.page .bbq-loading {
+	font-size:1.8em;
+	margin-bottom:20px;
+}
+
+body.page .projects .project a {
+	width:100%;
+	background-color: #E66168;
+	display:block;
+/*	font-size:0;
+	line-height:0;*/
+}
+
+body.page .projects .project a img {
+	width:100%;
+}
+
+body.page .projects .project:first-child {
+	margin-left:0;
+}
+
+body.page .projects .project:hover img {
+	opacity:0.5;
 }
 
 body.page .bbq-item article {
 	margin-bottom:50px;
 	display:none;
+}
+
+/*Films*/
+body.page-id-18 .projects .project {
+	width:18%;
+	max-width:200px;
+}
+
+body.page-id-18 .projects .project .play-button {
+	width:88px;
+	height:88px;
+	position:absolute;
+	top:106px;
+	left:56px;
+	z-index:5;
+	background: url('../images/play-button.png') no-repeat 0 0;
+	display:none;
+}
+
+body.page-id-18 .projects .project:hover .play-button {
+	display:block;
+}
+
+body.page .projects .project a .description {
+	width:100%;
+	height:100%;
+	font-size:100% !important;
+	line-height:1.2 !important;
+	color: #FFF;
+	position:absolute;
+	top:0;
+	left:0;
+	display:none;
+}
+
+body.page .projects .project:hover .description {
+	display:block;
+}
+
+body.page .projects .project .description h4.title {
+	font-size:1.9em;
+	line-height:1.2;
+	margin: 20px 20px 8px 20px;
+}
+
+body.page .projects .project .description p.director {
+	font-size:1.6em;
+	line-height:1.2;
+	margin: 0 20px;
+}
+
+/* Single Post
+-------------------------------------------------------------- */
+body.page .bbq-item .description {
+	margin-top:20px;
+}
+
+body.page .bbq-item .description .post-header {
+	width:100%;
+	overflow:hidden;
+}
+
+body.page .bbq-item .description .post-header .info {
+	width:60%;
+	margin-right:5%;
+	float:left;
+}
+
+body.page .bbq-item .description .post-header .media-toggle {
+	width:35%;
+	text-align:right;
+	font-size:1.6em;
+	float:right;
+}
+
+body.page .bbq-item .description .post-header .media-toggle a {
+	color:#E66168;
+	margin-left:10px;
+}
+
+body.page .bbq-item .description .post-header .media-toggle span {
+	margin-left:10px;
+}
+
+body.page .bbq-item .description .post-header .media-toggle a.active {
+	color:#666;
+}
+
+body.page .bbq-item .description .text {
+	width:100%;
+	margin-top:20px;
+}
+
+/* Page
+-------------------------------------------------------------- */
+body.page #content {
+	width:100%;
+    margin: 0;
+    position: relative;
+	line-height:1.2;
+}
+
+body.page #content h3 {
+    font-size:2em;
+	margin-bottom:15px;
+	text-transform:uppercase;
+}
+
+body.page #content p {
+    font-size:1.6em;
+}
+
+
+/* Page -- Resume
+-------------------------------------------------------------- */
+body.page-id-4 #content ul {
+	margin-bottom: 40px;
+}
+
+body.page-id-4 #content h3 {
+	color:#E66168;
+	margin-bottom:0;
+}
+
+body.page-id-4 #content ul li {
+	width:100%;
+	margin-bottom:15px;
+	overflow:hidden;
+}
+
+body.page-id-4 #content ul li .col1,
+body.page-id-4 #content ul li .col2,
+body.page-id-4 #content ul li .col3,
+body.page-id-4 #content ul li .col4 {
+	margin-right:2%;
+	float:left;
+}
+
+body.page-id-4 #content ul li .col1 {
+	width:28%;
+}
+
+body.page-id-4 #content ul li .col2,
+body.page-id-4 #content ul li .col4 {
+	width:20%;
+}
+
+body.page-id-4 #content ul li .col3 {
+	width:24%;
+}
+
+body.page-id-4 #content ul li .title h4 {
+	font-size:1.6em;
+	margin-bottom:5px;
+}
+
+body.page-id-4 #content ul li .title .note {
+	font-size:1.2em;
+	margin-bottom:10px;
+	display:block;
+}
+
+/* Page - Contact
+-------------------------------------------------------------- */
+body.page-id-6 #content a {
+	color:#E66168;
+}
+
+body.page-id-6 #content a:hover {
+	color:#666;
 }
 
 /* Content No Found
@@ -398,3 +613,12 @@ body.page .bbq-item article {
     font-size: 1.6em;
 }
 
+/* Content No Found
+-------------------------------------------------------------- */
+#footer p {
+	width:100%;
+	padding-top:20px;
+	border-top:3px #CCC dotted;
+	position:relative;
+	z-index:999;
+}

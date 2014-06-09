@@ -82,11 +82,17 @@ jQuery(function($) {
           var currentAction = $(this).attr('data-toggle-value');
           
           if( currentAction === 'show-video' && currentDisplay != 'video' ) {
+              $(this).siblings('a').removeClass('active');
+              $(this).addClass('active');
+              
               currentContainer.attr('data-toggle-state', 'video');
               currentContainer.find('.active-display').hide().removeClass('active-display');
               currentContainer.find('.video').addClass('active-display').show();
               
           } else if ( currentAction === 'show-photos' && currentDisplay != 'photos' ) {
+              $(this).siblings('a').removeClass('active');
+              $(this).addClass('active');
+              
               currentContainer.attr('data-toggle-state', 'photos');
               currentContainer.find('.active-display').hide().removeClass('active-display');
               currentContainer.find('.photos').addClass('active-display').show();

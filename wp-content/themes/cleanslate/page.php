@@ -18,7 +18,11 @@ get_header(); ?>
             <?php
                 while ( have_posts() ) : the_post();
                     
-                    get_template_part( 'content', 'page' );
+                    if ( is_page('resume') ) :
+                        get_template_part( 'content', 'resume' );
+                    else :
+                        get_template_part( 'content', 'page' );
+                    endif;
                     
                 endwhile; // end of the loop.
             ?>

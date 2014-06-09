@@ -51,7 +51,7 @@
             endif;
         ?>
     </div>
-    <div class="info">
+    <div class="description">
         <div class="post-header">
             <div class="info">
                 <h2 class="title"><?php the_title();?></a></h2>
@@ -62,7 +62,7 @@
                 if( $hasPhotos === true && $hasVideo === true ) :
             ?>
                 <div class="media-toggle">
-                    <a href="#" data-toggle-value="show-photos">Photos</a>
+                    <a href="#" data-toggle-value="show-photos" class="active">Photos</a>
                     <span>|</span>
                     <a href="#" data-toggle-value="show-video">Video</a>
                 </div>

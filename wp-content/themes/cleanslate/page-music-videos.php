@@ -35,8 +35,13 @@ get_header(); ?>
                 while ( $project_query->have_posts() ) : $project_query->the_post();
 ?>
                     <div class="project">
-                        <a href="#<?php echo $post->post_name; ?>" data-id="<?php echo $post->ID; ?>"><?php the_post_thumbnail('thumbnail'); ?>
-                            <span><?php the_title(); ?></span>
+                        <a href="#<?php echo $post->post_name; ?>" data-id="<?php echo $post->ID; ?>">
+                            <?php $thumb = get_thumbnail_custom($post->ID, 'thumbnail'); ?>
+                            <img src="<?php echo $thumb; ?>" width="100%" alt="<?php the_title(); ?>">
+                            <div class="description">
+                                <h4 class="title"><?php the_title(); ?></h4>
+                                <p class="director">By <?php the_field('director'); ?></p>
+                            </div>
                         </a>
                     </div>
 <?php
