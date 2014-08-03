@@ -23,7 +23,7 @@
                 data-cycle-center-vert=true
                 data-cycle-log="false"
             >
-                
+                <div class="cycle-pager"></div>
                 <a href="#" class="arrows prev slide-nav"><i class="icon-chevron-left fa-5x"></i></a>
                 <a href="#" class="arrows next slide-nav"><i class="icon-chevron-right fa-5x"></i></a>
                 
@@ -55,7 +55,7 @@
         <div class="post-header">
             <div class="info">
                 <h2 class="title"><?php the_title();?></a></h2>
-                <p class="director">By <?php the_field('director'); ?></p>
+                <p class="director">Directed by <?php the_field('director'); ?></p>
             </div>
             
             <?php

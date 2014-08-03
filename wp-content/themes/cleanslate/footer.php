@@ -21,13 +21,13 @@
 
 <?php wp_footer(); ?>
 
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/FitVid/jquery.fitvids.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.cycle2.min.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.cycle2.center.min.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/Slides-SlidesJS-3/source/jquery.slides.min.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-bbq-1.2.1.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/hashchange.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/source/FitVid/jquery.fitvids.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/source/jquery.cycle2.min.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/source/jquery.cycle2.center.min.js"></script>
+<!--<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/source/Slides-SlidesJS-3/jquery.slides.min.js"></script>-->
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/source/jquery-bbq-1.2.1.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/source/hashchange.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.min.js"></script>
 
 </body>
 </html>
