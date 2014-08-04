@@ -8,13 +8,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> data-post-id="<?php echo date('m-d-Y', strtotime(get_the_date())); ?>">
-    <div class="media" data-toggle-state="photos">
+    <div class="media">
         <?php
             $photos = get_field('photos');
             if( empty($photos) != 1 ) :
                 $hasPhotos = true;
         ?>
-            <div id="gallery-<?php the_ID(); ?>" class="photos active-display"
+            <div id="gallery-<?php the_ID(); ?>" class="photos"
                 data-cycle-fx=scrollHorz
                 data-cycle-timeout=0
                 data-cycle-prev=".arrows.prev"
@@ -62,9 +62,9 @@
                 if( $hasPhotos === true && $hasVideo === true ) :
             ?>
                 <div class="media-toggle">
-                    <a href="#" data-toggle-value="show-photos" class="active">Photos</a>
+                    <a href="#" class="toggle-photos" data-toggle-value="show-photos">Photos</a>
                     <span>|</span>
-                    <a href="#" data-toggle-value="show-video">Video</a>
+                    <a href="#" class="toggle-video" data-toggle-value="show-video">Video</a>
                 </div>
             <?php
                 endif;

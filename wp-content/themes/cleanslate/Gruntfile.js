@@ -50,16 +50,16 @@ module.exports = function(grunt) {
         uglify: {
             dist: {
                 options: {
-                    sourceMap: 'js/map/source-map.js'
+                    sourceMap: 'assets/js/map/source-map.js'
                 },
                 files: {
-                    'js/plugins.min.js': [
-                        'js/source/plugins.js',
-                        'js/vendor/**/*.js',
+                    'assets/js/plugins.min.js': [
+                        'assets/js/source/plugins.js',
+                        'assets/js/vendor/**/*.js',
                         '!assets/js/vendor/modernizr*.js'
                     ],
-                    'js/main.min.js': [
-                        'js/source/main.js'
+                    'assets/js/main.min.js': [
+                        'assets/js/source/main.js'
                     ]
                 }
             }

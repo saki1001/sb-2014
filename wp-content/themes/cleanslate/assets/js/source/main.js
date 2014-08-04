@@ -35,19 +35,51 @@ jQuery(function($) {
         //   }
         // });
         
-        $('.photos').customSlideActions('bind');
+        // $('.photos').customSlideActions('bind');
         
+        // Columns for Films Page
         if( $('body').hasClass('page-id-18') ) {
           
           var index = 1;
           $('body.page-id-18 .projects .project').each( function() {
-            console.log(index);
             if( index % 5 === 0 && index != 1 ) {
               $(this).addClass('last');
             }
             
             index++;
           });
+        }
+        
+        // Columns for Commercials Page
+        if( $('body').hasClass('page-id-20') ) {
+          
+          var index = 1;
+          $('body.page-id-20 .projects .project').each( function() {
+            if( index % 4 === 0 && index != 1 ) {
+              $(this).addClass('last');
+            }
+            
+            index++;
+          });
+        }
+        
+        if( $('body').hasClass('single') ) {
+          console.log('cycling');
+          $('.photos').cycle();
+          $('.photos').customSlideActions('bind');
+          
+          $('#media').find('.video').fitVids();
+          
+          // Set toggles
+          if( $('.photos').length > 0 && $(videoID).length === 0 ) {
+            $('.photos').addClass('active-display');
+            $('#media').attr('data-toggle-state','photos');
+            $('.media-toggle .toggle-photos').addClass('active');
+          } else {
+            $('.video').addClass('active-display');
+            $('#media').attr('data-toggle-state','video');
+            $('.media-toggle .toggle-video').addClass('active');
+          }
         }
     });
     

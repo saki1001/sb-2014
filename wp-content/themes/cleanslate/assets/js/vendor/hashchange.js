@@ -62,12 +62,19 @@ jQuery(function($) {
               // FitVid.js
               $(videoID).fitVids();
               
-              if( $(this),find('.photos').length > 0 ) {
-                $(this).find('.photos').cycle();
-                $(this).find('.photos').customSlideActions('bind');
-                // $(this).find('.photos').hide();
-              }
+              $(this).find('.photos').cycle();
+              $(this).find('.photos').customSlideActions('bind');
               
+              // Set toggles
+              if( $(this).find('.photos').length > 0 && $(videoID).length === 0 ) {
+                $(this).find('.photos').addClass('active-display');
+                $(this).find('#media').attr('data-toggle-state','photos');
+                $(this).find('.media-toggle .toggle-photos').addClass('active');
+              } else {
+                $(videoID).addClass('active-display');
+                $(this).find('#media').attr('data-toggle-state','video');
+                $(this).find('.media-toggle .toggle-video').addClass('active');
+              }
               
               $(this).find('article').slideDown();
             });

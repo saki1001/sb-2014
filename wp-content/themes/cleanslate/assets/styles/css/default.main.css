@@ -78,7 +78,7 @@ http://ryanfait.com/
 
 /* line 65, ../scss/default.main.scss */
 #footer {
-  max-width: 1200px;
+  max-width: 1000px;
   text-align: right;
   font-size: 1.6em;
   margin: 0 auto;
@@ -246,104 +246,130 @@ header h1 a {
 /* Slideshow
 -------------------------------------------------------------- */
 /* line 222, ../scss/default.main.scss */
-#main .photos {
+#media .photos {
   background-color: #F4F4F4;
-  position: relative;
+  padding-bottom: 40px;
+  position: absolute;
+  z-index: -1;
 }
-/* line 226, ../scss/default.main.scss */
-#main .photos img {
+/* line 228, ../scss/default.main.scss */
+#media .photos.active-display {
+  position: relative;
+  z-index: 1;
+}
+/* line 233, ../scss/default.main.scss */
+#media .photos img {
   display: none;
   max-width: 100%;
   height: auto;
 }
-/* line 231, ../scss/default.main.scss */
-#main .photos img.first {
+/* line 238, ../scss/default.main.scss */
+#media .photos img.first {
   display: block;
 }
-/* line 236, ../scss/default.main.scss */
-#main .photos .slide-nav {
+/* line 243, ../scss/default.main.scss */
+#media .photos .slide-nav {
   display: none;
 }
-/* line 240, ../scss/default.main.scss */
-#main .photos .cycle-overlay {
+/* line 247, ../scss/default.main.scss */
+#media .photos .cycle-pager {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+}
+/* line 254, ../scss/default.main.scss */
+#media .photos .cycle-pager span {
+  color: #999;
+  font-size: 3em;
+  margin-right: 5px;
+}
+/* line 260, ../scss/default.main.scss */
+#media .photos .cycle-pager span:hover, #media .photos .cycle-pager span.cycle-pager-active {
+  color: #E66168;
+  cursor: pointer;
+}
+/* line 267, ../scss/default.main.scss */
+#media .photos .cycle-overlay {
   width: 100%;
   position: absolute;
   bottom: 0;
   z-index: 600;
 }
-/* line 246, ../scss/default.main.scss */
-#main .photos .cycle-overlay a {
+/* line 273, ../scss/default.main.scss */
+#media .photos .cycle-overlay a {
   color: #FFF;
   background: #000;
   opacity: 0.5;
   padding: 30px 30px 50px 30px;
   display: block;
 }
-/* line 253, ../scss/default.main.scss */
-#main .photos .cycle-overlay a:hover {
+/* line 280, ../scss/default.main.scss */
+#media .photos .cycle-overlay a:hover {
   color: #CCC;
 }
-/* line 259, ../scss/default.main.scss */
-#main .photos .cycle-overlay .title,
-#main .photos .cycle-overlay .desc {
+/* line 286, ../scss/default.main.scss */
+#media .photos .cycle-overlay .title,
+#media .photos .cycle-overlay .desc {
   width: 100%;
   display: block;
 }
-/* line 264, ../scss/default.main.scss */
-#main .photos .cycle-overlay .title {
+/* line 291, ../scss/default.main.scss */
+#media .photos .cycle-overlay .title {
   font-weight: bold;
   font-size: 2em;
   margin-bottom: 20px;
 }
-/* line 270, ../scss/default.main.scss */
-#main .photos .cycle-overlay .desc {
+/* line 297, ../scss/default.main.scss */
+#media .photos .cycle-overlay .desc {
   font-size: 1.2em;
 }
-/* line 275, ../scss/default.main.scss */
-#main .photos .arrows {
+/* line 302, ../scss/default.main.scss */
+#media .photos .arrows {
   color: #777;
   width: 10%;
   max-width: 50px;
   position: absolute;
-  top: 50%;
+  top: 45%;
   z-index: 999;
 }
-/* line 283, ../scss/default.main.scss */
-#main .photos .arrows:hover {
+/* line 310, ../scss/default.main.scss */
+#media .photos .arrows:hover {
   color: #E66168;
 }
-/* line 287, ../scss/default.main.scss */
-#main .photos .arrows.prev {
+/* line 314, ../scss/default.main.scss */
+#media .photos .arrows.prev {
   text-align: right;
   left: 0;
 }
-/* line 292, ../scss/default.main.scss */
-#main .photos .arrows.next {
+/* line 319, ../scss/default.main.scss */
+#media .photos .arrows.next {
   right: 0;
 }
 
 /* Home
 -------------------------------------------------------------- */
-/* line 303, ../scss/default.main.scss */
+/* line 330, ../scss/default.main.scss */
 body.home #content {
   width: 100%;
   margin: 0;
   position: relative;
 }
-/* line 310, ../scss/default.main.scss */
+/* line 337, ../scss/default.main.scss */
 body.home .slideshow_container .slideshow_description_box {
   font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
   font-weight: normal;
   padding: 25px 0 30px;
   text-align: left;
 }
-/* line 316, ../scss/default.main.scss */
+/* line 343, ../scss/default.main.scss */
 body.home .slideshow_container .slideshow_description_box div.slideshow_title {
   font-size: 1.9em;
   margin-bottom: 10px;
   text-align: left;
 }
-/* line 322, ../scss/default.main.scss */
+/* line 349, ../scss/default.main.scss */
 body.home .slideshow_container .slideshow_description_box div.slideshow_description {
   font-size: 1.6em;
   text-align: left;
@@ -351,49 +377,79 @@ body.home .slideshow_container .slideshow_description_box div.slideshow_descript
 
 /* Project Category
 -------------------------------------------------------------- */
-/* line 334, ../scss/default.main.scss */
+/* line 361, ../scss/default.main.scss */
 body.page .bbq-loading {
   font-size: 1.8em;
   margin-bottom: 20px;
 }
-/* line 339, ../scss/default.main.scss */
+/* line 366, ../scss/default.main.scss */
 body.page .bbq-item article {
   margin-bottom: 50px;
   display: none;
 }
-/* line 344, ../scss/default.main.scss */
+/* line 371, ../scss/default.main.scss */
 body.page .projects {
   overflow: hidden;
 }
-/* line 347, ../scss/default.main.scss */
+/* line 374, ../scss/default.main.scss */
 body.page .projects .project {
-  width: 20%;
-  margin-right: 2%;
+  width: 23%;
+  margin-right: 2.5%;
+  margin-bottom: 25px;
   position: relative;
+  overflow: hidden;
   float: left;
 }
-/* line 353, ../scss/default.main.scss */
+/* line 382, ../scss/default.main.scss */
 body.page .projects .project a {
   width: 100%;
+  line-height: 0;
   background-color: #E66168;
   display: block;
 }
-/* line 358, ../scss/default.main.scss */
+/* line 388, ../scss/default.main.scss */
 body.page .projects .project a img {
   width: 100%;
 }
-/* line 363, ../scss/default.main.scss */
-body.page .projects .project:first-child {
-  margin-left: 0;
+/* line 392, ../scss/default.main.scss */
+body.page .projects .project a .description {
+  width: 100%;
+  height: 100%;
+  line-height: 1.2;
+  color: #FFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
 }
-/* line 367, ../scss/default.main.scss */
-body.page .projects .project:hover img {
+/* line 402, ../scss/default.main.scss */
+body.page .projects .project a .description h4.title {
+  font-size: 1.9em;
+  line-height: 1.2;
+  margin: 20px 20px 8px 20px;
+}
+/* line 408, ../scss/default.main.scss */
+body.page .projects .project a .description p.director {
+  font-size: 1.6em;
+  line-height: 1.2;
+  margin: 0 20px;
+}
+/* line 417, ../scss/default.main.scss */
+body.page .projects .project a:hover .description {
+  display: block;
+}
+/* line 421, ../scss/default.main.scss */
+body.page .projects .project a:hover img {
   opacity: 0.5;
+}
+/* line 427, ../scss/default.main.scss */
+body.page .projects .project.last {
+  margin-right: 0;
 }
 
 /* Project Category: Films
 ------------------------------------*/
-/* line 379, ../scss/default.main.scss */
+/* line 439, ../scss/default.main.scss */
 body.page-id-18 .projects .project {
   width: 18%;
   margin-right: 2.5%;
@@ -401,143 +457,115 @@ body.page-id-18 .projects .project {
   margin-bottom: 30px;
   /*  max-width:200px;*/
 }
-/* line 386, ../scss/default.main.scss */
-body.page-id-18 .projects .project.last {
-  margin-right: 0;
-}
-/* line 391, ../scss/default.main.scss */
+/* line 447, ../scss/default.main.scss */
 body.page-id-18 .projects .project a .play-button {
-  width: 88px;
-  height: 88px;
+  width: 100%;
+  height: 300px;
   position: absolute;
-  top: 106px;
-  left: 56px;
+  top: 35%;
+  left: 25%;
   z-index: 5;
   background: url("../../images/play-button.png") no-repeat 0 0;
+  background-size: 50% auto;
   display: none;
 }
-/* line 402, ../scss/default.main.scss */
-body.page-id-18 .projects .project a .description {
-  width: 100%;
-  height: 100%;
-  font-size: 100% !important;
-  line-height: 1.2 !important;
-  color: #FFF;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-}
-/* line 413, ../scss/default.main.scss */
-body.page-id-18 .projects .project a .description h4.title {
-  font-size: 1.9em;
-  line-height: 1.2;
-  margin: 20px 20px 8px 20px;
-}
-/* line 419, ../scss/default.main.scss */
-body.page-id-18 .projects .project a .description p.director {
-  font-size: 1.6em;
-  line-height: 1.2;
-  margin: 0 20px;
-}
-/* line 427, ../scss/default.main.scss */
+/* line 462, ../scss/default.main.scss */
 body.page-id-18 .projects .project a:hover .play-button {
-  display: block;
-}
-/* line 430, ../scss/default.main.scss */
-body.page-id-18 .projects .project a:hover .description {
   display: block;
 }
 
 /* Single Post
 -------------------------------------------------------------- */
-/* line 444, ../scss/default.main.scss */
+/* line 476, ../scss/default.main.scss */
 body.page .bbq-item .description,
-body.single-post .description {
+body.single article .description {
   margin-top: 20px;
 }
-/* line 447, ../scss/default.main.scss */
+/* line 479, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header,
-body.single-post .description .post-header {
+body.single article .description .post-header {
   width: 100%;
   overflow: hidden;
 }
-/* line 451, ../scss/default.main.scss */
+/* line 483, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header .info,
-body.single-post .description .post-header .info {
+body.single article .description .post-header .info {
   width: 60%;
   margin-right: 5%;
   float: left;
 }
-/* line 457, ../scss/default.main.scss */
+/* line 489, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header .media-toggle,
-body.single-post .description .post-header .media-toggle {
+body.single article .description .post-header .media-toggle {
   width: 35%;
   text-align: right;
   font-size: 1.6em;
   float: right;
 }
-/* line 463, ../scss/default.main.scss */
+/* line 495, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header .media-toggle a,
-body.single-post .description .post-header .media-toggle a {
+body.single article .description .post-header .media-toggle a {
   color: #E66168;
   margin-left: 10px;
 }
-/* line 467, ../scss/default.main.scss */
+/* line 499, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header .media-toggle a.active,
-body.single-post .description .post-header .media-toggle a.active {
+body.single article .description .post-header .media-toggle a.active {
   color: #666;
 }
-/* line 472, ../scss/default.main.scss */
+/* line 504, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header .media-toggle span,
-body.single-post .description .post-header .media-toggle span {
+body.single article .description .post-header .media-toggle span {
   margin-left: 10px;
 }
-/* line 478, ../scss/default.main.scss */
+/* line 510, ../scss/default.main.scss */
 body.page .bbq-item .description .text,
-body.single-post .description .text {
+body.single article .description .text {
   width: 100%;
   margin-top: 20px;
 }
 
 /* Page
 -------------------------------------------------------------- */
-/* line 489, ../scss/default.main.scss */
-body.page #content {
+/* line 522, ../scss/default.main.scss */
+body.page #content,
+body.single #content {
   width: 100%;
   margin: 0;
   position: relative;
   line-height: 1.2;
 }
-/* line 495, ../scss/default.main.scss */
-body.page #content h3 {
+/* line 528, ../scss/default.main.scss */
+body.page #content h3,
+body.single #content h3 {
   font-size: 2em;
   margin-bottom: 15px;
   text-transform: uppercase;
 }
-/* line 501, ../scss/default.main.scss */
-body.page #content p {
+/* line 534, ../scss/default.main.scss */
+body.page #content p,
+body.single #content p {
   font-size: 1.6em;
 }
 
 /* Page -- Resume
 -------------------------------------------------------------- */
-/* line 513, ../scss/default.main.scss */
+/* line 546, ../scss/default.main.scss */
 body.page-id-4 #content h3 {
   color: #E66168;
   margin-bottom: 0;
 }
-/* line 518, ../scss/default.main.scss */
+/* line 551, ../scss/default.main.scss */
 body.page-id-4 #content ul {
   margin-bottom: 40px;
 }
-/* line 521, ../scss/default.main.scss */
+/* line 554, ../scss/default.main.scss */
 body.page-id-4 #content ul li {
   width: 100%;
   margin-bottom: 15px;
   overflow: hidden;
 }
-/* line 529, ../scss/default.main.scss */
+/* line 562, ../scss/default.main.scss */
 body.page-id-4 #content ul li .col1,
 body.page-id-4 #content ul li .col2,
 body.page-id-4 #content ul li .col3,
@@ -545,25 +573,25 @@ body.page-id-4 #content ul li .col4 {
   margin-right: 2%;
   float: left;
 }
-/* line 534, ../scss/default.main.scss */
+/* line 567, ../scss/default.main.scss */
 body.page-id-4 #content ul li .col1 {
   width: 28%;
 }
-/* line 539, ../scss/default.main.scss */
+/* line 572, ../scss/default.main.scss */
 body.page-id-4 #content ul li .col2,
 body.page-id-4 #content ul li .col4 {
   width: 20%;
 }
-/* line 543, ../scss/default.main.scss */
+/* line 576, ../scss/default.main.scss */
 body.page-id-4 #content ul li .col3 {
   width: 24%;
 }
-/* line 548, ../scss/default.main.scss */
+/* line 581, ../scss/default.main.scss */
 body.page-id-4 #content ul li .title h4 {
   font-size: 1.6em;
   margin-bottom: 5px;
 }
-/* line 553, ../scss/default.main.scss */
+/* line 586, ../scss/default.main.scss */
 body.page-id-4 #content ul li .title .note {
   font-size: 1.2em;
   margin-bottom: 10px;
@@ -572,25 +600,25 @@ body.page-id-4 #content ul li .title .note {
 
 /* Page - Contact
 -------------------------------------------------------------- */
-/* line 568, ../scss/default.main.scss */
+/* line 601, ../scss/default.main.scss */
 body.page-id-6 #content a {
   color: #E66168;
 }
-/* line 571, ../scss/default.main.scss */
+/* line 604, ../scss/default.main.scss */
 body.page-id-6 #content a:hover {
   color: #666;
 }
 
 /* Content No Found
 -------------------------------------------------------------- */
-/* line 580, ../scss/default.main.scss */
+/* line 613, ../scss/default.main.scss */
 #content .not-found {
   font-size: 1.6em;
 }
 
 /* Footer
 -------------------------------------------------------------- */
-/* line 586, ../scss/default.main.scss */
+/* line 619, ../scss/default.main.scss */
 #footer p {
   width: 100%;
   padding-top: 20px;
