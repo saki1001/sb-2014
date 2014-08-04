@@ -1,0 +1,600 @@
+/* Structure
+-------------------------------------------------------------- */
+/*Clearfixing main elements*/
+/* line 8, ../scss/default.main.scss */
+body:before,
+body:after,
+#page:before,
+#page:after {
+  content: "";
+  display: table;
+}
+
+/* line 13, ../scss/default.main.scss */
+body:after,
+#page:after {
+  clear: both;
+}
+
+/* line 17, ../scss/default.main.scss */
+body,
+#page {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+
+/* line 21, ../scss/default.main.scss */
+* {
+  margin: 0;
+}
+
+/* line 24, ../scss/default.main.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 28, ../scss/default.main.scss */
+body {
+  font-family: 'Muli-Regular', Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+  line-height: 1;
+  color: #333333;
+  background-color: #BCBCBC;
+  position: relative;
+}
+
+/* line 37, ../scss/default.main.scss */
+#page {
+  max-width: 1000px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  position: relative;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
+  margin: 0 auto -185px;
+  /* the bottom margin is the negative value of the footer's height */
+  padding: 0 30px;
+}
+
+/*
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+*/
+/* line 56, ../scss/default.main.scss */
+#footer, .push {
+  height: 185px;
+  /* .push must be the same height as .footer */
+}
+
+/* line 60, ../scss/default.main.scss */
+.push {
+  width: 100%;
+  overflow: hidden;
+  /*clearfix*/
+}
+
+/* line 65, ../scss/default.main.scss */
+#footer {
+  max-width: 1200px;
+  text-align: right;
+  font-size: 1.6em;
+  margin: 0 auto;
+}
+
+/* line 72, ../scss/default.main.scss */
+#footer div {
+  padding: 130px 0 10px;
+}
+
+/* line 77, ../scss/default.main.scss */
+header,
+#main {
+  max-width: 1200px;
+  float: left;
+}
+
+/* Text meant only for screen readers */
+/* line 84, ../scss/default.main.scss */
+.screen-reader-text,
+.assistive-text {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Alignment */
+/* line 91, ../scss/default.main.scss */
+.alignleft {
+  display: inline;
+  float: left;
+}
+
+/* line 95, ../scss/default.main.scss */
+.alignright {
+  display: inline;
+  float: right;
+}
+
+/* line 99, ../scss/default.main.scss */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Links
+-------------------------------------------------------------- */
+/* line 108, ../scss/default.main.scss */
+a, a:link, a:visited {
+  color: #333333;
+  text-decoration: none;
+}
+
+/* line 113, ../scss/default.main.scss */
+a:active, a:hover {
+  /*    color: #E66168;*/
+  color: #E66168;
+  text-decoration: none;
+}
+
+/* Headers
+-------------------------------------------------------------- */
+/* line 122, ../scss/default.main.scss */
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+/* Header
+-------------------------------------------------------------- */
+/* line 128, ../scss/default.main.scss */
+header {
+  width: 100%;
+  position: relative;
+  padding: 30px 0;
+}
+/* line 133, ../scss/default.main.scss */
+header #logo {
+  width: 100%;
+  border-bottom: 3px #CCC dotted;
+}
+/* line 138, ../scss/default.main.scss */
+header h1 {
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+/* line 142, ../scss/default.main.scss */
+header h1 .blog-name {
+  font-size: 2.8em;
+}
+/* line 146, ../scss/default.main.scss */
+header h1 .description {
+  font-size: 1.6em;
+  margin-left: 10px;
+}
+/* line 151, ../scss/default.main.scss */
+header h1 a {
+  /*    opacity: 0;*/
+  display: block;
+  width: 100%;
+}
+
+/* Menu
+-------------------------------------------------------------- */
+/* line 161, ../scss/default.main.scss */
+#main-menu {
+  display: block;
+  font-size: 1.8em;
+  line-height: 1.2;
+  float: right;
+  padding-top: 25px;
+  /*Highlight current menu item*/
+}
+/* line 169, ../scss/default.main.scss */
+#main-menu .menu-main-navigation-container,
+#main-menu #menu-main-navigation {
+  float: right;
+}
+/* line 173, ../scss/default.main.scss */
+#main-menu li {
+  float: left;
+  position: relative;
+}
+/* line 178, ../scss/default.main.scss */
+#main-menu a {
+  display: block;
+  line-height: 2em;
+  padding: 0 0 0 1.75em;
+  text-decoration: none;
+  background-color: #FFFFFF;
+}
+/* line 189, ../scss/default.main.scss */
+#main-menu .current-menu-item a,
+#main-menu .current-menu-ancestor a,
+#main-menu .current-post-ancestor a {
+  color: #E66168;
+}
+
+/* General
+-------------------------------------------------------------- */
+/* line 197, ../scss/default.main.scss */
+#main {
+  width: 100%;
+}
+/* line 200, ../scss/default.main.scss */
+#main h2 {
+  font-size: 2.2em;
+  line-height: 1.2;
+  padding-bottom: 15px;
+  width: 100%;
+  font-weight: normal;
+}
+/* line 208, ../scss/default.main.scss */
+#main ul {
+  line-height: 1.2;
+  margin-left: 30px;
+}
+/* line 212, ../scss/default.main.scss */
+#main ul li {
+  padding-left: 12px;
+}
+
+/* Slideshow
+-------------------------------------------------------------- */
+/* line 222, ../scss/default.main.scss */
+#main .photos {
+  background-color: #F4F4F4;
+  position: relative;
+}
+/* line 226, ../scss/default.main.scss */
+#main .photos img {
+  display: none;
+  max-width: 100%;
+  height: auto;
+}
+/* line 231, ../scss/default.main.scss */
+#main .photos img.first {
+  display: block;
+}
+/* line 236, ../scss/default.main.scss */
+#main .photos .slide-nav {
+  display: none;
+}
+/* line 240, ../scss/default.main.scss */
+#main .photos .cycle-overlay {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 600;
+}
+/* line 246, ../scss/default.main.scss */
+#main .photos .cycle-overlay a {
+  color: #FFF;
+  background: #000;
+  opacity: 0.5;
+  padding: 30px 30px 50px 30px;
+  display: block;
+}
+/* line 253, ../scss/default.main.scss */
+#main .photos .cycle-overlay a:hover {
+  color: #CCC;
+}
+/* line 259, ../scss/default.main.scss */
+#main .photos .cycle-overlay .title,
+#main .photos .cycle-overlay .desc {
+  width: 100%;
+  display: block;
+}
+/* line 264, ../scss/default.main.scss */
+#main .photos .cycle-overlay .title {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+/* line 270, ../scss/default.main.scss */
+#main .photos .cycle-overlay .desc {
+  font-size: 1.2em;
+}
+/* line 275, ../scss/default.main.scss */
+#main .photos .arrows {
+  color: #777;
+  width: 10%;
+  max-width: 50px;
+  position: absolute;
+  top: 50%;
+  z-index: 999;
+}
+/* line 283, ../scss/default.main.scss */
+#main .photos .arrows:hover {
+  color: #E66168;
+}
+/* line 287, ../scss/default.main.scss */
+#main .photos .arrows.prev {
+  text-align: right;
+  left: 0;
+}
+/* line 292, ../scss/default.main.scss */
+#main .photos .arrows.next {
+  right: 0;
+}
+
+/* Home
+-------------------------------------------------------------- */
+/* line 303, ../scss/default.main.scss */
+body.home #content {
+  width: 100%;
+  margin: 0;
+  position: relative;
+}
+/* line 310, ../scss/default.main.scss */
+body.home .slideshow_container .slideshow_description_box {
+  font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  padding: 25px 0 30px;
+  text-align: left;
+}
+/* line 316, ../scss/default.main.scss */
+body.home .slideshow_container .slideshow_description_box div.slideshow_title {
+  font-size: 1.9em;
+  margin-bottom: 10px;
+  text-align: left;
+}
+/* line 322, ../scss/default.main.scss */
+body.home .slideshow_container .slideshow_description_box div.slideshow_description {
+  font-size: 1.6em;
+  text-align: left;
+}
+
+/* Project Category
+-------------------------------------------------------------- */
+/* line 334, ../scss/default.main.scss */
+body.page .bbq-loading {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+/* line 339, ../scss/default.main.scss */
+body.page .bbq-item article {
+  margin-bottom: 50px;
+  display: none;
+}
+/* line 344, ../scss/default.main.scss */
+body.page .projects {
+  overflow: hidden;
+}
+/* line 347, ../scss/default.main.scss */
+body.page .projects .project {
+  width: 20%;
+  margin-right: 2%;
+  position: relative;
+  float: left;
+}
+/* line 353, ../scss/default.main.scss */
+body.page .projects .project a {
+  width: 100%;
+  background-color: #E66168;
+  display: block;
+}
+/* line 358, ../scss/default.main.scss */
+body.page .projects .project a img {
+  width: 100%;
+}
+/* line 363, ../scss/default.main.scss */
+body.page .projects .project:first-child {
+  margin-left: 0;
+}
+/* line 367, ../scss/default.main.scss */
+body.page .projects .project:hover img {
+  opacity: 0.5;
+}
+
+/* Project Category: Films
+------------------------------------*/
+/* line 379, ../scss/default.main.scss */
+body.page-id-18 .projects .project {
+  width: 18%;
+  margin-right: 2.5%;
+  font-size: 0;
+  margin-bottom: 30px;
+  /*  max-width:200px;*/
+}
+/* line 386, ../scss/default.main.scss */
+body.page-id-18 .projects .project.last {
+  margin-right: 0;
+}
+/* line 391, ../scss/default.main.scss */
+body.page-id-18 .projects .project a .play-button {
+  width: 88px;
+  height: 88px;
+  position: absolute;
+  top: 106px;
+  left: 56px;
+  z-index: 5;
+  background: url("../../images/play-button.png") no-repeat 0 0;
+  display: none;
+}
+/* line 402, ../scss/default.main.scss */
+body.page-id-18 .projects .project a .description {
+  width: 100%;
+  height: 100%;
+  font-size: 100% !important;
+  line-height: 1.2 !important;
+  color: #FFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+/* line 413, ../scss/default.main.scss */
+body.page-id-18 .projects .project a .description h4.title {
+  font-size: 1.9em;
+  line-height: 1.2;
+  margin: 20px 20px 8px 20px;
+}
+/* line 419, ../scss/default.main.scss */
+body.page-id-18 .projects .project a .description p.director {
+  font-size: 1.6em;
+  line-height: 1.2;
+  margin: 0 20px;
+}
+/* line 427, ../scss/default.main.scss */
+body.page-id-18 .projects .project a:hover .play-button {
+  display: block;
+}
+/* line 430, ../scss/default.main.scss */
+body.page-id-18 .projects .project a:hover .description {
+  display: block;
+}
+
+/* Single Post
+-------------------------------------------------------------- */
+/* line 444, ../scss/default.main.scss */
+body.page .bbq-item .description,
+body.single-post .description {
+  margin-top: 20px;
+}
+/* line 447, ../scss/default.main.scss */
+body.page .bbq-item .description .post-header,
+body.single-post .description .post-header {
+  width: 100%;
+  overflow: hidden;
+}
+/* line 451, ../scss/default.main.scss */
+body.page .bbq-item .description .post-header .info,
+body.single-post .description .post-header .info {
+  width: 60%;
+  margin-right: 5%;
+  float: left;
+}
+/* line 457, ../scss/default.main.scss */
+body.page .bbq-item .description .post-header .media-toggle,
+body.single-post .description .post-header .media-toggle {
+  width: 35%;
+  text-align: right;
+  font-size: 1.6em;
+  float: right;
+}
+/* line 463, ../scss/default.main.scss */
+body.page .bbq-item .description .post-header .media-toggle a,
+body.single-post .description .post-header .media-toggle a {
+  color: #E66168;
+  margin-left: 10px;
+}
+/* line 467, ../scss/default.main.scss */
+body.page .bbq-item .description .post-header .media-toggle a.active,
+body.single-post .description .post-header .media-toggle a.active {
+  color: #666;
+}
+/* line 472, ../scss/default.main.scss */
+body.page .bbq-item .description .post-header .media-toggle span,
+body.single-post .description .post-header .media-toggle span {
+  margin-left: 10px;
+}
+/* line 478, ../scss/default.main.scss */
+body.page .bbq-item .description .text,
+body.single-post .description .text {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Page
+-------------------------------------------------------------- */
+/* line 489, ../scss/default.main.scss */
+body.page #content {
+  width: 100%;
+  margin: 0;
+  position: relative;
+  line-height: 1.2;
+}
+/* line 495, ../scss/default.main.scss */
+body.page #content h3 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+/* line 501, ../scss/default.main.scss */
+body.page #content p {
+  font-size: 1.6em;
+}
+
+/* Page -- Resume
+-------------------------------------------------------------- */
+/* line 513, ../scss/default.main.scss */
+body.page-id-4 #content h3 {
+  color: #E66168;
+  margin-bottom: 0;
+}
+/* line 518, ../scss/default.main.scss */
+body.page-id-4 #content ul {
+  margin-bottom: 40px;
+}
+/* line 521, ../scss/default.main.scss */
+body.page-id-4 #content ul li {
+  width: 100%;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+/* line 529, ../scss/default.main.scss */
+body.page-id-4 #content ul li .col1,
+body.page-id-4 #content ul li .col2,
+body.page-id-4 #content ul li .col3,
+body.page-id-4 #content ul li .col4 {
+  margin-right: 2%;
+  float: left;
+}
+/* line 534, ../scss/default.main.scss */
+body.page-id-4 #content ul li .col1 {
+  width: 28%;
+}
+/* line 539, ../scss/default.main.scss */
+body.page-id-4 #content ul li .col2,
+body.page-id-4 #content ul li .col4 {
+  width: 20%;
+}
+/* line 543, ../scss/default.main.scss */
+body.page-id-4 #content ul li .col3 {
+  width: 24%;
+}
+/* line 548, ../scss/default.main.scss */
+body.page-id-4 #content ul li .title h4 {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+/* line 553, ../scss/default.main.scss */
+body.page-id-4 #content ul li .title .note {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Page - Contact
+-------------------------------------------------------------- */
+/* line 568, ../scss/default.main.scss */
+body.page-id-6 #content a {
+  color: #E66168;
+}
+/* line 571, ../scss/default.main.scss */
+body.page-id-6 #content a:hover {
+  color: #666;
+}
+
+/* Content No Found
+-------------------------------------------------------------- */
+/* line 580, ../scss/default.main.scss */
+#content .not-found {
+  font-size: 1.6em;
+}
+
+/* Footer
+-------------------------------------------------------------- */
+/* line 586, ../scss/default.main.scss */
+#footer p {
+  width: 100%;
+  padding-top: 20px;
+  border-top: 3px #CCC dotted;
+  position: relative;
+  z-index: 999;
+}

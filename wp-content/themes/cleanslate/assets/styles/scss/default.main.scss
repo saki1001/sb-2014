@@ -1,0 +1,592 @@
+
+/* Structure
+-------------------------------------------------------------- */
+/*Clearfixing main elements*/
+body:before,
+body:after,
+#page:before,
+#page:after {
+    content:"";
+    display:table;
+}
+body:after,
+#page:after {
+    clear:both;
+}
+body,
+#page {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+body {
+  font-family: 'Muli-Regular', Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+  line-height: 1;
+  color: #333333;
+  background-color:#BCBCBC;
+  position: relative;
+}
+
+#page {
+  max-width: 1000px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  position: relative;
+  background-color:#FFFFFF;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    0px 0px 20px 0px rgba(50, 50, 50, 0.5);
+  box-shadow:         0px 0px 20px 0px rgba(50, 50, 50, 0.5);
+  margin: 0 auto -185px; /* the bottom margin is the negative value of the footer's height */;
+  padding: 0 30px;
+}
+
+/*
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+*/
+
+#footer, .push {
+    height: 185px; /* .push must be the same height as .footer */
+}
+
+.push {
+    width: 100%;
+    overflow: hidden; /*clearfix*/
+}
+
+#footer {
+    max-width: 1200px;
+    text-align: right;
+    font-size: 1.6em;
+    margin: 0 auto;
+}
+
+#footer div {
+    padding: 130px 0 10px;
+}
+
+header,
+#main {
+    max-width: 1200px;
+    float: left;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text,
+.assistive-text {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Alignment */
+.alignleft {
+    display: inline;
+    float: left;
+}
+.alignright {
+    display: inline;
+    float: right;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Links
+-------------------------------------------------------------- */
+a, a:link, a:visited {
+    color: #333333;
+    text-decoration: none;
+}
+
+a:active, a:hover {
+/*    color: #E66168;*/
+  color: #E66168;
+    text-decoration: none;
+}
+
+
+/* Headers
+-------------------------------------------------------------- */
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
+}
+
+/* Header
+-------------------------------------------------------------- */
+header {
+  width:100%;
+  position: relative;
+  padding: 30px 0;
+    
+  #logo {
+      width: 100%;
+    border-bottom:3px #CCC dotted;
+  }
+  
+  h1 {
+    text-transform:uppercase;
+    margin:10px 0;
+    
+    .blog-name {
+            font-size: 2.8em;
+    }
+    
+    .description {
+      font-size: 1.6em;
+      margin-left:10px;
+    }
+    
+    a {
+      /*    opacity: 0;*/
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+/* Menu
+-------------------------------------------------------------- */
+#main-menu {
+    display: block;
+    font-size: 1.8em;
+    line-height: 1.2;
+    float: right;
+    padding-top: 25px;
+    
+    .menu-main-navigation-container,
+    #menu-main-navigation {
+        float: right;
+    }
+    
+    li {
+        float: left;
+        position: relative;
+    }
+    
+    a {
+        display: block;
+        line-height: 2em;
+        padding: 0 0 0 1.75em;
+        text-decoration: none;
+        background-color: #FFFFFF;
+    }
+    
+    /*Highlight current menu item*/
+    .current-menu-item a,
+    .current-menu-ancestor a,
+    .current-post-ancestor a {
+        color: #E66168;
+    }
+}
+
+
+/* General
+-------------------------------------------------------------- */
+#main {
+  width:100%;
+  
+  h2 {
+      font-size: 2.2em;
+      line-height: 1.2;
+      padding-bottom: 15px;
+      width: 100%;
+      font-weight: normal;
+  }
+  
+  ul {
+      line-height: 1.2;
+      margin-left: 30px;
+      
+      li {
+          padding-left: 12px;
+      }
+  }
+  
+}
+
+
+/* Slideshow
+-------------------------------------------------------------- */
+#main .photos {
+  background-color:#F4F4F4;
+  position:relative;
+  
+  img {
+    display:none;
+    max-width:100%;
+    height:auto;
+    
+    &.first {
+      display:block;
+    }
+  }
+  
+  .slide-nav {
+    display:none;
+  }
+  
+  .cycle-overlay {
+    width: 100%;
+    position:absolute;
+    bottom: 0;
+    z-index: 600;
+    
+    a {
+        color:#FFF;
+      background: #000;
+      opacity: 0.5;
+      padding: 30px 30px 50px 30px;
+      display:block;
+      
+      &:hover {
+        color:#CCC;
+      }
+    }
+    
+    .title,
+    .desc {
+      width:100%;
+      display:block;
+    }
+    
+    .title {
+      font-weight:bold;
+      font-size:2em;
+      margin-bottom:20px;
+    }
+    
+    .desc {
+      font-size:1.2em;
+    }
+  }
+  
+  .arrows {
+    color:#777;
+    width:10%;
+    max-width:50px;
+    position:absolute;
+    top:50%;
+    z-index:999;
+    
+    &:hover {
+      color:#E66168;
+    }
+    
+    &.prev {
+      text-align:right;
+      left:0;
+    }
+    
+    &.next {
+      right:0;
+    }
+  }
+  
+}
+
+
+/* Home
+-------------------------------------------------------------- */
+body.home {
+ #content {
+    width:100%;
+    margin: 0;
+    position: relative;
+  }
+  
+  .slideshow_container {
+    .slideshow_description_box {
+      font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      padding: 25px 0 30px;
+      text-align:left;
+      
+      div.slideshow_title {
+        font-size: 1.9em;
+        margin-bottom:10px;
+        text-align: left;
+      }
+      
+      div.slideshow_description {
+        font-size: 1.6em;
+        text-align: left;
+      }
+    }
+  }
+}
+
+
+/* Project Category
+-------------------------------------------------------------- */
+body.page {
+  .bbq-loading {
+    font-size:1.8em;
+    margin-bottom:20px;
+  }
+  
+  .bbq-item article {
+    margin-bottom:50px;
+    display:none;
+  }
+  
+  .projects {
+    overflow:hidden;
+    
+    .project {
+      width:20%;
+      margin-right:2%;
+      position:relative;
+      float:left;
+      
+      a {
+        width:100%;
+        background-color: #E66168;
+        display:block;
+        
+        img {
+          width:100%;
+        }
+      }
+      
+      &:first-child {
+        margin-left:0;
+      }
+      
+      &:hover img {
+        opacity:0.5;
+      }
+    }
+  }
+}
+
+
+/* Project Category: Films
+------------------------------------*/
+body.page-id-18 {
+  .projects {
+    .project {
+      width:18%;
+      margin-right:2.5%;
+      font-size:0;
+      margin-bottom:30px;
+      /*  max-width:200px;*/
+        
+      &.last {
+        margin-right:0;
+      }
+      
+      a {
+        .play-button {
+          width:88px;
+          height:88px;
+          position:absolute;
+          top:106px;
+          left:56px;
+          z-index:5;
+          background: url('../../images/play-button.png') no-repeat 0 0;
+          display:none;
+        }
+        
+        .description {
+          width:100%;
+          height:100%;
+          font-size:100% !important;
+          line-height:1.2 !important;
+          color: #FFF;
+          position:absolute;
+          top:0;
+          left:0;
+          display:none;
+          
+          h4.title {
+            font-size:1.9em;
+            line-height:1.2;
+            margin: 20px 20px 8px 20px;
+          }
+          
+          p.director {
+            font-size:1.6em;
+            line-height:1.2;
+            margin: 0 20px;
+          }
+        }
+        
+        &:hover {
+          .play-button {
+            display:block;
+          }
+          .description {
+            display:block;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* Single Post
+-------------------------------------------------------------- */
+body.page .bbq-item,
+body.single-post {
+  .description {
+    margin-top:20px;
+    
+    .post-header {
+      width:100%;
+      overflow:hidden;
+      
+      .info {
+        width:60%;
+        margin-right:5%;
+        float:left;
+      }
+      
+      .media-toggle {
+        width:35%;
+        text-align:right;
+        font-size:1.6em;
+        float:right;
+        
+        a {
+          color:#E66168;
+          margin-left:10px;
+          
+          &.active {
+            color:#666;
+          }
+        }
+        
+        span {
+          margin-left:10px;
+        }
+      }
+    }
+    
+    .text {
+      width:100%;
+      margin-top:20px;
+    }
+  }
+}
+
+
+/* Page
+-------------------------------------------------------------- */
+body.page {
+  #content {
+    width:100%;
+    margin: 0;
+    position: relative;
+    line-height:1.2;
+    
+    h3 {
+        font-size:2em;
+      margin-bottom:15px;
+      text-transform:uppercase;
+    }
+    
+    p {
+        font-size:1.6em;
+    }
+  }
+}
+
+
+/* Page -- Resume
+-------------------------------------------------------------- */
+body.page-id-4 {
+  #content {
+    
+    h3 {
+      color:#E66168;
+      margin-bottom:0;
+    }
+    
+    ul {
+      margin-bottom: 40px;
+      
+      li {
+        width:100%;
+        margin-bottom:15px;
+        overflow:hidden;
+        
+        .col1,
+        .col2,
+        .col3,
+        .col4 {
+          margin-right:2%;
+          float:left;
+        }
+        
+        .col1 {
+          width:28%;
+        }
+        
+        .col2,
+        .col4 {
+          width:20%;
+        }
+        
+        .col3 {
+          width:24%;
+        }
+        
+        .title {
+          h4 {
+            font-size:1.6em;
+            margin-bottom:5px;
+          }
+          
+          .note {
+            font-size:1.2em;
+            margin-bottom:10px;
+            display:block;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* Page - Contact
+-------------------------------------------------------------- */
+body.page-id-6 {
+  #content a {
+    color:#E66168;
+    
+    &:hover {
+      color:#666;
+    }
+  }
+}
+
+
+/* Content No Found
+-------------------------------------------------------------- */
+#content .not-found {
+    font-size: 1.6em;
+}
+
+/* Footer
+-------------------------------------------------------------- */
+#footer p {
+  width:100%;
+  padding-top:20px;
+  border-top:3px #CCC dotted;
+  position:relative;
+  z-index:999;
+}

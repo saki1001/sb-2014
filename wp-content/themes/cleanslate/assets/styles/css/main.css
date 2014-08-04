@@ -274,14 +274,13 @@ header h1 a {
 
 #main #content ul li {
     padding-left: 12px;
-    background: url('../images/list-bullet-blue.png') no-repeat 0 7px;
+    background: url('../../images/list-bullet-blue.png') no-repeat 0 7px;
 }
 
 /* Slideshow
 -------------------------------------------------------------- */
-#main .media .photos {
+#main .photos {
 	background-color:#F4F4F4;
-	margin-bottom:20px;
 	position:relative;
 }
 
@@ -295,9 +294,7 @@ header h1 a {
 
 #main .photos img {
 	max-width:100%;
-/*	height:auto;*/
-	width:auto;
-	max-height:600px;
+	height:auto;
 }
 
 #main .photos .slide-nav {
@@ -317,37 +314,6 @@ header h1 a {
 	opacity: 0.5;
 	padding: 30px 30px 50px 30px;
 	display:block;
-}
-
-#main .photos .cycle-pager {
-	width:100%;
-	text-align:center;
-	margin-top:10px;
-	position:absolute;
-	bottom:10px;
-	overflow:hidden;
-	z-index:1000;
-	display:none;
-}
-
-#main .photos:hover > .cycle-pager {
-	display:block;
-}
-
-#main .photos .cycle-pager span {
-    color:#CCC;
-	font-size:3em;
-	margin-right:15px;
-}
-
-#main .photos .cycle-pager span:hover {
-    cursor:pointer;
-	color:#E66168;
-}
-
-#main .photos .cycle-pager span.cycle-pager-active {
-	cursor:default;
-	color:#E66168;
 }
 
 #main .photos .cycle-overlay a:hover {
@@ -437,7 +403,6 @@ body.home .slideshow_container .slideshow_description_box div.slideshow_descript
 body.page .projects .project {
 	width:20%;
 	margin-right:2%;
-	margin-bottom:20px;
 	position:relative;
 	float:left;
 }
@@ -447,8 +412,13 @@ body.page .bbq-loading {
 	margin-bottom:20px;
 }
 
+body.page .projects {
+	overflow:hidden;
+}
+
 body.page .projects .project a {
 	width:100%;
+	background-color: #E66168;
 	display:block;
 /*	font-size:0;
 	line-height:0;*/
@@ -459,11 +429,7 @@ body.page .projects .project a img {
 }
 
 body.page .projects .project:first-child {
-/*	margin-right:0;*/
-}
-
-body.page .projects .project a:hover {
-	background-color: #E66168;
+	margin-left:0;
 }
 
 body.page .projects .project:hover img {
@@ -475,11 +441,13 @@ body.page .bbq-item article {
 	display:none;
 }
 
-/* Films
+/*Films
 ------------------------------------*/
 body.page-id-18 .projects .project {
 	width:18%;
+	margin-right:2.5%;
 	font-size:0;
+	margin-bottom:30px;
 /*	max-width:200px;*/
 }
 
@@ -494,7 +462,7 @@ body.page-id-18 .projects .project .play-button {
 	top:106px;
 	left:56px;
 	z-index:5;
-	background: url('../images/play-button.png') no-repeat 0 0;
+	background: url('../../images/play-button.png') no-repeat 0 0;
 	display:none;
 }
 
@@ -570,10 +538,6 @@ body.page .bbq-item .description .post-header .media-toggle a.active {
 body.page .bbq-item .description .text {
 	width:100%;
 	margin-top:20px;
-}
-
-body.page .bbq-item .description .text p {
-	margin-bottom:8px;
 }
 
 /* Page
