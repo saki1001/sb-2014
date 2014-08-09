@@ -12,15 +12,16 @@
     <section id="content">
         <?php
             $photos = get_field('home_slideshow');
+            
             if( empty($photos) != 1 ) :
         ?>
             <div id="gallery-home" class="photos cycle-slideshow"
                 data-cycle-fx=scrollHorz
-                data-cycle-timeout=0
-                data-cycle-prev="#slide-prev"
-                data-cycle-next="#slide-next"
+                data-cycle-timeout=4000
+                data-cycle-prev=".arrows.prev"
+                data-cycle-next=".arrows.next"
                 data-cycle-overlay-template="<a href={{url}}><span class=title>{{title}}</span><span class=desc>{{desc}}</span></a>"
-                data-cycle-log="false"
+                data-cycle-log="true"
             >
                 
                 <a href="#" class="arrows prev slide-nav"><i class="icon-chevron-left fa-5x"></i></a>
