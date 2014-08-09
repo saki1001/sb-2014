@@ -20,6 +20,9 @@
                 data-cycle-timeout=4000
                 data-cycle-prev=".arrows.prev"
                 data-cycle-next=".arrows.next"
+                data-cycle-center-horz=true
+                data-cycle-center-vert=true
+                data-cycle-auto-height="2000:1050"
                 data-cycle-overlay-template="<a href={{url}}><span class=title>{{title}}</span><span class=desc>{{desc}}</span></a>"
                 data-cycle-log="true"
             >
