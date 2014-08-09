@@ -13,7 +13,8 @@
         <?php
             if ( have_posts() ) :
                 // Homepage slideshow
-                do_action('slideshow_deploy', '35');
+                // do_action('slideshow_deploy', '35');
+                get_template_part( 'page', 'home' );
                 
             else :
             // Content Not Found Template
