@@ -226,6 +226,10 @@ body {
       position:relative;
       padding-bottom:0;
       z-index:1;
+      
+      img {
+        width:100%; // force full width
+      }
     }
   }
   
@@ -305,7 +309,7 @@ body {
       }
     
       .desc {
-        font-size:1.2em;
+        font-size:1.8em;
       }
     }
   
