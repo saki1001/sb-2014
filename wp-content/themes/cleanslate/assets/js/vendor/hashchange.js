@@ -87,7 +87,7 @@ jQuery(function($) {
       
       var toggleMediaDisplay = function (e) {
           e.preventDefault();
-          console.log($(this).attr('data-toggle-value'));
+          
           var currentContainer = $(this).parentsUntil('.bbq-item').find('.media');
           var currentDisplay = currentContainer.attr('data-toggle-state');
           var currentAction = $(this).attr('data-toggle-value');
