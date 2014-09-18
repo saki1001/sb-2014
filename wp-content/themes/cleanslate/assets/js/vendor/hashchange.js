@@ -65,6 +65,33 @@ jQuery(function($) {
               $(this).find('.photos').cycle();
               $(this).find('.photos').customSlideActions('bind');
               
+              // Add Vimeo API requirements to iframes
+            	$('#video-cycle iframe').each(function() {
+                var source = $(this).attr('src');
+                var id = $(this).attr('id');
+                
+                source += '?api=1&player_id=' + id;
+                
+                $(this).attr('src', source);
+            	});
+              
+              $(this).find('#video-cycle').cycle();
+              
+              // Vimeo API Controls
+              var vimeoController = function(videoWrapper) {
+                  var video = $(videoWrapper).find('iframe')[0];
+                  var player = $f(video)
+                  
+                  player.api('pause');
+              };
+              
+              // jQueryCycle after event
+              $('#video-cycle').on( 'cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
+                  vimeoController($(outgoingSlideEl))
+              });
+              
+              $(this).find('#video-cycle').customSlideActions('bind');
+              
               // Set toggles
               if( $(this).find('.photos').length > 0 && $(videoID).length === 0 ) {
                 $(this).find('.photos').addClass('active-display');
