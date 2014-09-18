@@ -97,3 +97,49 @@ function custom_taxonomies_project() {
 }
 add_action( 'init', 'custom_taxonomies_project', 0 );
 
+
+// Add to admin_init function
+add_filter('manage_edit-project_columns', 'add_new_project_columns');
+
+function add_new_project_columns($project_columns) {
+    $new_columns['cb'] = '<input type="checkbox" />';
+     
+    $new_columns['title'] = _x('Gallery Name', 'column name');
+    $new_columns['featured_image'] = __('Featured Image');
+    $new_columns['project_categories'] = __('Categories');
+    $new_columns['author'] = __('Author');
+    $new_columns['date'] = _x('Date', 'column name');
+ 
+    return $new_columns;
+}
+
+// Add Columns to Project Admin Page
+add_action('manage_project_posts_custom_column', 'manage_project_columns', 10, 2);
+ 
+function manage_project_columns($column_name, $id) {
+    global $wpdb;
+    switch ($column_name) {
+    case 'project_categories' :
+        $terms = get_the_terms( $id, 'project_category' );
+        if ($terms && ! is_wp_error($terms)) :
+        	$term_slugs_arr = array();
+        	foreach ($terms as $term) {
+        	    $term_slugs_arr[] = $term->name;
+        	}
+        	$terms_slug_str = join( " ", $term_slugs_arr);
+        endif;
+        echo $terms_slug_str;
+    break;
+    case 'featured_image':
+        // Get the thumbnail
+        $post_thumbnail_id = get_post_thumbnail_id($id);
+        
+        if ($post_thumbnail_id) {  
+            $post_thumbnail_img = wp_get_attachment_image_src($post_thumbnail_id, 'small-thumbnail');  
+            echo '<img src="' . $post_thumbnail_img[0] . '" width="115" height ="115" alt="image-' . $id . '" >';  
+        }  
+    break;
+    default:
+        break;
+    } // end switch
+}   
