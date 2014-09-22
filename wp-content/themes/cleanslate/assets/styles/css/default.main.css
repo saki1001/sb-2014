@@ -243,100 +243,123 @@ header h1 a {
   padding-left: 12px;
 }
 
-/* Slideshow
+/* Project Media
 -------------------------------------------------------------- */
 /* line 225, ../scss/default.main.scss */
 body.page-id-8 #main .photos {
   position: relative;
   padding-bottom: 0;
+  max-height: 640px;
   z-index: 1;
 }
-/* line 230, ../scss/default.main.scss */
+/* line 231, ../scss/default.main.scss */
 body.page-id-8 #main .photos img {
   width: 100%;
+  height: auto;
 }
-/* line 236, ../scss/default.main.scss */
+/* line 239, ../scss/default.main.scss */
 body #main .photos {
   background-color: #F4F4F4;
+}
+/* line 243, ../scss/default.main.scss */
+body #main .photos,
+body #main .videos {
   padding-bottom: 40px;
   position: absolute;
   z-index: -1;
 }
-/* line 242, ../scss/default.main.scss */
-body #main .photos.active-display {
+/* line 248, ../scss/default.main.scss */
+body #main .photos.active-display,
+body #main .videos.active-display {
   position: relative;
   z-index: 1;
 }
-/* line 247, ../scss/default.main.scss */
-body #main .photos img {
+/* line 253, ../scss/default.main.scss */
+body #main .photos img,
+body #main .videos img {
   display: none;
   max-width: 100%;
   height: auto;
 }
-/* line 252, ../scss/default.main.scss */
-body #main .photos img.first {
+/* line 258, ../scss/default.main.scss */
+body #main .photos img.first,
+body #main .videos img.first {
   display: block;
 }
-/* line 257, ../scss/default.main.scss */
-body #main .photos .slide-nav {
+/* line 263, ../scss/default.main.scss */
+body #main .photos .slide-nav,
+body #main .videos .slide-nav {
   display: none;
 }
-/* line 261, ../scss/default.main.scss */
-body #main .photos .cycle-pager {
+/* line 267, ../scss/default.main.scss */
+body #main .photos .cycle-pager,
+body #main .videos .cycle-pager {
   width: 100%;
+  background-color: #FFF;
   text-align: center;
   position: absolute;
   bottom: 0;
   z-index: 999;
 }
-/* line 268, ../scss/default.main.scss */
-body #main .photos .cycle-pager span {
+/* line 275, ../scss/default.main.scss */
+body #main .photos .cycle-pager span,
+body #main .videos .cycle-pager span {
   color: #999;
   font-size: 3em;
   margin-right: 5px;
 }
-/* line 274, ../scss/default.main.scss */
-body #main .photos .cycle-pager span:hover, body #main .photos .cycle-pager span.cycle-pager-active {
+/* line 281, ../scss/default.main.scss */
+body #main .photos .cycle-pager span:hover, body #main .photos .cycle-pager span.cycle-pager-active,
+body #main .videos .cycle-pager span:hover,
+body #main .videos .cycle-pager span.cycle-pager-active {
   color: #E66168;
   cursor: pointer;
 }
-/* line 281, ../scss/default.main.scss */
-body #main .photos .cycle-overlay {
+/* line 288, ../scss/default.main.scss */
+body #main .photos .cycle-overlay,
+body #main .videos .cycle-overlay {
   width: 100%;
   position: absolute;
   bottom: 0;
   z-index: 600;
 }
-/* line 287, ../scss/default.main.scss */
-body #main .photos .cycle-overlay a {
+/* line 294, ../scss/default.main.scss */
+body #main .photos .cycle-overlay a,
+body #main .videos .cycle-overlay a {
   color: #FFF;
   background: #000;
   opacity: 0.5;
   padding: 30px 30px 50px 30px;
   display: block;
 }
-/* line 294, ../scss/default.main.scss */
-body #main .photos .cycle-overlay a:hover {
+/* line 301, ../scss/default.main.scss */
+body #main .photos .cycle-overlay a:hover,
+body #main .videos .cycle-overlay a:hover {
   color: #CCC;
 }
-/* line 300, ../scss/default.main.scss */
+/* line 307, ../scss/default.main.scss */
 body #main .photos .cycle-overlay .title,
-body #main .photos .cycle-overlay .desc {
+body #main .photos .cycle-overlay .desc,
+body #main .videos .cycle-overlay .title,
+body #main .videos .cycle-overlay .desc {
   width: 100%;
   display: block;
 }
-/* line 305, ../scss/default.main.scss */
-body #main .photos .cycle-overlay .title {
+/* line 312, ../scss/default.main.scss */
+body #main .photos .cycle-overlay .title,
+body #main .videos .cycle-overlay .title {
   font-weight: bold;
   font-size: 2em;
   margin-bottom: 20px;
 }
-/* line 311, ../scss/default.main.scss */
-body #main .photos .cycle-overlay .desc {
+/* line 318, ../scss/default.main.scss */
+body #main .photos .cycle-overlay .desc,
+body #main .videos .cycle-overlay .desc {
   font-size: 1.8em;
 }
-/* line 316, ../scss/default.main.scss */
-body #main .photos .arrows {
+/* line 323, ../scss/default.main.scss */
+body #main .photos .arrows,
+body #main .videos .arrows {
   color: #777;
   width: 10%;
   max-width: 50px;
@@ -344,42 +367,45 @@ body #main .photos .arrows {
   top: 45%;
   z-index: 999;
 }
-/* line 324, ../scss/default.main.scss */
-body #main .photos .arrows:hover {
+/* line 331, ../scss/default.main.scss */
+body #main .photos .arrows:hover,
+body #main .videos .arrows:hover {
   color: #E66168;
 }
-/* line 328, ../scss/default.main.scss */
-body #main .photos .arrows.prev {
+/* line 335, ../scss/default.main.scss */
+body #main .photos .arrows.prev,
+body #main .videos .arrows.prev {
   text-align: right;
   left: 0;
 }
-/* line 333, ../scss/default.main.scss */
-body #main .photos .arrows.next {
+/* line 340, ../scss/default.main.scss */
+body #main .photos .arrows.next,
+body #main .videos .arrows.next {
   right: 0;
 }
 
 /* Home
 -------------------------------------------------------------- */
-/* line 344, ../scss/default.main.scss */
+/* line 352, ../scss/default.main.scss */
 body.home #content {
   width: 100%;
   margin: 0;
   position: relative;
 }
-/* line 351, ../scss/default.main.scss */
+/* line 359, ../scss/default.main.scss */
 body.home .slideshow_container .slideshow_description_box {
   font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
   font-weight: normal;
   padding: 25px 0 30px;
   text-align: left;
 }
-/* line 357, ../scss/default.main.scss */
+/* line 365, ../scss/default.main.scss */
 body.home .slideshow_container .slideshow_description_box div.slideshow_title {
   font-size: 1.9em;
   margin-bottom: 10px;
   text-align: left;
 }
-/* line 363, ../scss/default.main.scss */
+/* line 371, ../scss/default.main.scss */
 body.home .slideshow_container .slideshow_description_box div.slideshow_description {
   font-size: 1.6em;
   text-align: left;
@@ -387,21 +413,21 @@ body.home .slideshow_container .slideshow_description_box div.slideshow_descript
 
 /* Project Category
 -------------------------------------------------------------- */
-/* line 375, ../scss/default.main.scss */
+/* line 383, ../scss/default.main.scss */
 body.page .bbq-loading {
   font-size: 1.8em;
   margin-bottom: 20px;
 }
-/* line 380, ../scss/default.main.scss */
+/* line 388, ../scss/default.main.scss */
 body.page .bbq-item article {
   margin-bottom: 50px;
   display: none;
 }
-/* line 385, ../scss/default.main.scss */
+/* line 393, ../scss/default.main.scss */
 body.page .projects {
   overflow: hidden;
 }
-/* line 388, ../scss/default.main.scss */
+/* line 396, ../scss/default.main.scss */
 body.page .projects .project {
   width: 23%;
   margin-right: 2.5%;
@@ -410,18 +436,27 @@ body.page .projects .project {
   overflow: hidden;
   float: left;
 }
-/* line 396, ../scss/default.main.scss */
+/* line 404, ../scss/default.main.scss */
 body.page .projects .project a {
   width: 100%;
   line-height: 0;
   background-color: #E66168;
   display: block;
 }
-/* line 402, ../scss/default.main.scss */
+/* line 410, ../scss/default.main.scss */
 body.page .projects .project a img {
   width: 100%;
+  position: relative;
 }
-/* line 406, ../scss/default.main.scss */
+/* line 416, ../scss/default.main.scss */
+body.page .projects .project a.has-image img {
+  z-index: 3;
+}
+/* line 422, ../scss/default.main.scss */
+body.page .projects .project a.no-image img {
+  z-index: 1;
+}
+/* line 427, ../scss/default.main.scss */
 body.page .projects .project a .description {
   width: 100%;
   height: 100%;
@@ -430,36 +465,33 @@ body.page .projects .project a .description {
   position: absolute;
   top: 0;
   left: 0;
-  display: none;
+  z-index: 2;
 }
-/* line 416, ../scss/default.main.scss */
+/* line 437, ../scss/default.main.scss */
 body.page .projects .project a .description h4.title {
   font-size: 1.9em;
   line-height: 1.2;
   margin: 20px 20px 8px 20px;
 }
-/* line 422, ../scss/default.main.scss */
+/* line 443, ../scss/default.main.scss */
 body.page .projects .project a .description p.director {
   font-size: 1.6em;
   line-height: 1.2;
   margin: 0 20px;
 }
-/* line 431, ../scss/default.main.scss */
-body.page .projects .project a:hover .description {
-  display: block;
-}
-/* line 435, ../scss/default.main.scss */
-body.page .projects .project a:hover img {
+/* line 452, ../scss/default.main.scss */
+body.page .projects .project a:hover.has-image img {
+  z-index: 1;
   opacity: 0.5;
 }
-/* line 441, ../scss/default.main.scss */
+/* line 460, ../scss/default.main.scss */
 body.page .projects .project.last {
   margin-right: 0;
 }
 
 /* Project Category: Films
 ------------------------------------*/
-/* line 453, ../scss/default.main.scss */
+/* line 472, ../scss/default.main.scss */
 body.page-id-18 .projects .project {
   width: 18%;
   margin-right: 2.5%;
@@ -467,7 +499,7 @@ body.page-id-18 .projects .project {
   margin-bottom: 30px;
   /*  max-width:200px;*/
 }
-/* line 461, ../scss/default.main.scss */
+/* line 480, ../scss/default.main.scss */
 body.page-id-18 .projects .project a .play-button {
   width: 100%;
   height: 300px;
@@ -479,32 +511,27 @@ body.page-id-18 .projects .project a .play-button {
   background-size: 50% auto;
   display: none;
 }
-/* line 476, ../scss/default.main.scss */
+/* line 495, ../scss/default.main.scss */
 body.page-id-18 .projects .project a:hover .play-button {
   display: block;
 }
 
 /* Single Post
 -------------------------------------------------------------- */
-/* line 490, ../scss/default.main.scss */
-body.page .bbq-item .description,
-body.single article .description {
-  margin-top: 20px;
-}
-/* line 493, ../scss/default.main.scss */
+/* line 510, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header,
 body.single article .description .post-header {
   width: 100%;
   overflow: hidden;
 }
-/* line 497, ../scss/default.main.scss */
+/* line 514, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header .info,
 body.single article .description .post-header .info {
   width: 60%;
   margin-right: 5%;
   float: left;
 }
-/* line 503, ../scss/default.main.scss */
+/* line 520, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header .media-toggle,
 body.single article .description .post-header .media-toggle {
   width: 35%;
@@ -512,23 +539,23 @@ body.single article .description .post-header .media-toggle {
   font-size: 1.6em;
   float: right;
 }
-/* line 509, ../scss/default.main.scss */
+/* line 526, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header .media-toggle a,
 body.single article .description .post-header .media-toggle a {
   color: #E66168;
   margin-left: 10px;
 }
-/* line 513, ../scss/default.main.scss */
+/* line 530, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header .media-toggle a.active,
 body.single article .description .post-header .media-toggle a.active {
   color: #666;
 }
-/* line 518, ../scss/default.main.scss */
+/* line 535, ../scss/default.main.scss */
 body.page .bbq-item .description .post-header .media-toggle span,
 body.single article .description .post-header .media-toggle span {
   margin-left: 10px;
 }
-/* line 524, ../scss/default.main.scss */
+/* line 541, ../scss/default.main.scss */
 body.page .bbq-item .description .text,
 body.single article .description .text {
   width: 100%;
@@ -537,7 +564,7 @@ body.single article .description .text {
 
 /* Page
 -------------------------------------------------------------- */
-/* line 536, ../scss/default.main.scss */
+/* line 553, ../scss/default.main.scss */
 body.page #content,
 body.single #content {
   width: 100%;
@@ -545,14 +572,14 @@ body.single #content {
   position: relative;
   line-height: 1.2;
 }
-/* line 542, ../scss/default.main.scss */
+/* line 559, ../scss/default.main.scss */
 body.page #content h3,
 body.single #content h3 {
   font-size: 2em;
   margin-bottom: 15px;
   text-transform: uppercase;
 }
-/* line 548, ../scss/default.main.scss */
+/* line 565, ../scss/default.main.scss */
 body.page #content p,
 body.single #content p {
   font-size: 1.6em;
@@ -560,22 +587,22 @@ body.single #content p {
 
 /* Page -- Resume
 -------------------------------------------------------------- */
-/* line 560, ../scss/default.main.scss */
+/* line 577, ../scss/default.main.scss */
 body.page-id-4 #content h3 {
   color: #E66168;
   margin-bottom: 0;
 }
-/* line 565, ../scss/default.main.scss */
+/* line 582, ../scss/default.main.scss */
 body.page-id-4 #content ul {
   margin-bottom: 40px;
 }
-/* line 568, ../scss/default.main.scss */
+/* line 585, ../scss/default.main.scss */
 body.page-id-4 #content ul li {
   width: 100%;
   margin-bottom: 15px;
   overflow: hidden;
 }
-/* line 576, ../scss/default.main.scss */
+/* line 593, ../scss/default.main.scss */
 body.page-id-4 #content ul li .col1,
 body.page-id-4 #content ul li .col2,
 body.page-id-4 #content ul li .col3,
@@ -583,25 +610,25 @@ body.page-id-4 #content ul li .col4 {
   margin-right: 2%;
   float: left;
 }
-/* line 581, ../scss/default.main.scss */
+/* line 598, ../scss/default.main.scss */
 body.page-id-4 #content ul li .col1 {
   width: 28%;
 }
-/* line 586, ../scss/default.main.scss */
+/* line 603, ../scss/default.main.scss */
 body.page-id-4 #content ul li .col2,
 body.page-id-4 #content ul li .col4 {
   width: 20%;
 }
-/* line 590, ../scss/default.main.scss */
+/* line 607, ../scss/default.main.scss */
 body.page-id-4 #content ul li .col3 {
   width: 24%;
 }
-/* line 595, ../scss/default.main.scss */
+/* line 612, ../scss/default.main.scss */
 body.page-id-4 #content ul li .title h4 {
   font-size: 1.6em;
   margin-bottom: 5px;
 }
-/* line 600, ../scss/default.main.scss */
+/* line 617, ../scss/default.main.scss */
 body.page-id-4 #content ul li .title .note {
   font-size: 1.2em;
   margin-bottom: 10px;
@@ -610,25 +637,25 @@ body.page-id-4 #content ul li .title .note {
 
 /* Page - Contact
 -------------------------------------------------------------- */
-/* line 615, ../scss/default.main.scss */
+/* line 632, ../scss/default.main.scss */
 body.page-id-6 #content a {
   color: #E66168;
 }
-/* line 618, ../scss/default.main.scss */
+/* line 635, ../scss/default.main.scss */
 body.page-id-6 #content a:hover {
   color: #666;
 }
 
 /* Content No Found
 -------------------------------------------------------------- */
-/* line 627, ../scss/default.main.scss */
+/* line 644, ../scss/default.main.scss */
 #content .not-found {
   font-size: 1.6em;
 }
 
 /* Footer
 -------------------------------------------------------------- */
-/* line 633, ../scss/default.main.scss */
+/* line 650, ../scss/default.main.scss */
 #footer p {
   width: 100%;
   padding-top: 20px;
