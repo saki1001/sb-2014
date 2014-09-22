@@ -38,7 +38,7 @@ function get_thumbnail_custom($postId, $thumbType) {
         endif;
     else :
         
-        $thumbUrl = get_bloginfo('template_directory') . "/assets/images/thumb-blank.png";
+        $thumbUrl = null;
         
     endif;
     
