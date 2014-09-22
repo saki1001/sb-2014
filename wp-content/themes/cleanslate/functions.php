@@ -142,6 +142,9 @@ add_theme_support( 'post-thumbnails' );
 // Add thumbnail size for "Film" projects
 add_image_size( 'film-thumb', 200, 300, true );
 
+// Adding Custom Thumbnail Size;
+add_image_size( 'small-thumbnail', 115, 115, true );
+
 // Add "last" class to last post in loop
 add_filter('post_class', 'my_post_class');
 
@@ -153,6 +156,9 @@ function my_post_class($classes){
 
 // Prevent from adding link to inserted imgaes
 update_option('image_default_link_type','none');
+
+// Custom Thumbnail Retreival
+include('php/simple_html_dom.php');
 
 // Custom Thumbnail Retreival
 include('php/get-thumbnail-custom.php');
