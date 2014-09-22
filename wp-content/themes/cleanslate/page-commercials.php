@@ -35,8 +35,16 @@ get_header(); ?>
                 while ( $project_query->have_posts() ) : $project_query->the_post();
 ?>
                     <div class="project">
-                        <a href="#<?php echo $post->post_name; ?>" data-id="<?php echo $post->ID; ?>">
-                            <?php $thumb = get_thumbnail_custom($post->ID, 'thumbnail'); ?>
+                        <?php 
+                            $thumb = get_thumbnail_custom($post->ID, 'thumbnail');
+                            if( $thumb === null ) {
+                                $thumb = get_bloginfo('template_directory') . '/assets/images/thumb-blank.png';
+                                $thumbClass = 'no-image';
+                            } else {
+                                $thumbClass = 'has-image';
+                            }
+                        ?>
+                        <a href="#<?php echo $post->post_name; ?>" data-id="<?php echo $post->ID; ?>" class="<?php echo $thumbClass; ?>">
                             <img src="<?php echo $thumb; ?>" width="100%" alt="<?php the_title(); ?>">
                             <div class="description">
                                 <h4 class="title"><?php the_title(); ?></h4>
