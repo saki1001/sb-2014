@@ -51,31 +51,23 @@ jQuery(function($) {
               $( '.bbq-loading' ).hide();
               
               // Unbind former ones
-              // $(this).find('.media-toggle a').unbind( 'click', toggleMediaDisplay );
+              $(this).find('.media-toggle a').unbind( 'click', toggleMediaDisplay );
+              
+              var photosEl = $(this).find('.photos');
+              var videosEl = $(this).find('.videos');
+              var videosID = '#' + $(this).find('.videos').attr('id');
+              var galleryID = '#' + $(this).find('.photos').attr('id');
               
               // Rebind all + new ones
               $(this).find('.media-toggle a').bind( 'click', toggleMediaDisplay );
               
-              var videoID = '#' + $(this).find('.video').attr('id');
-              var galleryID = '#' + $(this).find('.photos').attr('id');
+              photosEl.cycle();
+              photosEl.customSlideActions('bind');
               
               // FitVid.js
-              $(videoID).fitVids();
+              videosEl.fitVids();
               
-              $(this).find('.photos').cycle();
-              $(this).find('.photos').customSlideActions('bind');
-              
-              // Add Vimeo API requirements to iframes
-            	$('#video-cycle iframe').each(function() {
-                var source = $(this).attr('src');
-                var id = $(this).attr('id');
-                
-                source += '?api=1&player_id=' + id;
-                
-                $(this).attr('src', source);
-            	});
-              
-              $(this).find('#video-cycle').cycle();
+              videosEl.cycle();
               
               // Vimeo API Controls
               var vimeoController = function(videoWrapper) {
@@ -86,24 +78,29 @@ jQuery(function($) {
               };
               
               // jQueryCycle after event
-              $('#video-cycle').on( 'cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
+              videosEl.on( 'cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
                   vimeoController($(outgoingSlideEl))
               });
               
-              $(this).find('#video-cycle').customSlideActions('bind');
+              videosEl.customSlideActions('bind');
               
               // Set toggles
-              if( $(this).find('.photos').length > 0 && $(videoID).length === 0 ) {
-                $(this).find('.photos').addClass('active-display');
+              if( photosEl.find('img').length > 0 && videosEl.find('iframe').length === 0 ) {
+                photolsEl.addClass('active-display');
                 $(this).find('#media').attr('data-toggle-state','photos');
                 $(this).find('.media-toggle .toggle-photos').addClass('active');
               } else {
-                $(videoID).addClass('active-display');
+                videosEl.addClass('active-display');
                 $(this).find('#media').attr('data-toggle-state','video');
                 $(this).find('.media-toggle .toggle-video').addClass('active');
               }
               
-              $(this).find('article').slideDown();
+              // Animated Scroll
+              $('html, body').animate({
+                  scrollTop: $(this).offset().top
+              }, 1000, function() {
+                $(this).find('article').slideDown(1000);
+              });
             });
         }
       })
@@ -123,9 +120,9 @@ jQuery(function($) {
               $(this).siblings('a').removeClass('active');
               $(this).addClass('active');
               
-              currentContainer.attr('data-toggle-state', 'video');
+              currentContainer.attr('data-toggle-state', 'videos');
               currentContainer.find('.active-display').hide().removeClass('active-display');
-              currentContainer.find('.video').addClass('active-display').show();
+              currentContainer.find('.videos').addClass('active-display').show();
               
           } else if ( currentAction === 'show-photos' && currentDisplay != 'photos' ) {
               $(this).siblings('a').removeClass('active');
