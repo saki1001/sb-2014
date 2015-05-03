@@ -15,7 +15,7 @@
 
 <footer id="footer" role="contentinfo">
     <div>
-        <p>Susan Block &copy;2014</p>
+        <p>Susan Block &copy;2015</p>
     </div>
 </footer><!-- #footer -->
 
