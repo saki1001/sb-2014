@@ -20,8 +20,6 @@
                 data-cycle-timeout=0
                 data-cycle-prev=".arrows.prev"
                 data-cycle-next=".arrows.next"
-                data-cycle-center-horz=true
-                data-cycle-center-vert=true
                 data-cycle-log="false"
             >
             <?php
@@ -29,7 +27,11 @@
                 foreach( $photos as $photo ) :
                     $photoImage = $photo['photo'];
             ?>
-                <img src="<?php echo $photoImage['sizes']['large']; ?>" width="<?php echo $photoImage['sizes']['large-width']; ?>" height="<?php echo $photoImage['sizes']['large-height']; ?>" alt="<?php echo $photoImage['title']; ?>" />
+                <img
+                    src="<?php echo $photoImage['sizes']['large']; ?>"
+                    width="<?php echo $photoImage['sizes']['large-width']; ?>"
+                    height="<?php echo $photoImage['sizes']['large-height']; ?>"
+                    alt="<?php echo $photoImage['title']; ?>" />
             <?php
                     $pI++;
                 endforeach;
@@ -62,6 +64,7 @@
                 data-cycle-log="false"
                 data-cycle-slides="> div"
                 data-cycle-caption="#video-caption"
+                data-cycle-pager-template="<a href='#'>{{title}}</a>"
             >
                 <?php
                     // Loop through Video Embed Codes
@@ -79,6 +82,9 @@
                         
                         // Set ID
                         $iframe->id = 'post-' . $post->id . 'video-' . $vI;
+
+                        // Set Title
+                        $iframe->title = $video['video_title'];
                         
                         $id = $iframe->id;
                         $source = $iframe->src;
