@@ -23,6 +23,13 @@ jQuery(function($) {
         
         // Add .bbq-current class to "current" nav link(s), only if url isn't empty.
         url && $( 'a[href="#' + url + '"]' ).addClass( 'bbq-current' );
+
+        // Pause all videos
+        $('.bbq-content').find('iframe').each( function() {
+          var video = $(this)[0];
+          var player = $f(video);
+          player.api('pause');
+        });
         
         if ( cache[ url ] ) {
           // Since the element is already in the cache, it doesn't need to be
@@ -61,12 +68,15 @@ jQuery(function($) {
               // Rebind all + new ones
               $(this).find('.media-toggle a').bind( 'click', toggleMediaDisplay );
               
-              photosEl.cycle();
-              photosEl.customSlideActions('bind');
-              
               // FitVid.js
               videosEl.fitVids();
-              
+
+              // Set Video Pager Title
+              videosEl.find('.fluid-width-video-wrapper').each( function(i) {
+                i+=1; // up the index
+                var videoTitle = i + '<span>) ' + $(this).find('iframe').attr('title') + '</span>';
+                $(this).attr('title',videoTitle);
+              });
               videosEl.cycle();
               
               // Vimeo API Controls
@@ -95,11 +105,24 @@ jQuery(function($) {
                 $(this).find('.media-toggle .toggle-video').addClass('active');
               }
               
+              var processed = 0;
+              var articleID = '#post-' + postID;
+              var article = $(articleID);
+
               // Animated Scroll
               $('html, body').animate({
-                  scrollTop: $(this).offset().top
+                  scrollTop: $(this).offset().top - 30
               }, 1000, function() {
-                $(this).find('article').slideDown(1000);
+
+                if( processed === 0 ) {
+                  article.slideDown(1000, function() {
+                    // Run Cycle once elements
+                    // Have height on page (for centering)
+                    photosEl.cycle();
+                    photosEl.customSlideActions('bind');
+                  });
+                }
+                processed++;
               });
             });
         }
