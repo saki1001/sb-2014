@@ -398,6 +398,13 @@ body.home .slideshow_container .slideshow_description_box div.slideshow_descript
 	text-align: left;
 }
 
+
+/*@media (max-width: 600px) {*/
+	body.home .slideshow_container {
+		padding-bottom: 40px;
+	}
+/*}*/
+
 /* Project Category
 -------------------------------------------------------------- */
 body.page .projects .project {

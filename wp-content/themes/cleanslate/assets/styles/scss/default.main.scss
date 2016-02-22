@@ -544,6 +544,14 @@ header {
   }
 }
 
+// Screen X-Small and Under
+@media (max-width: $screen-sm-min) {
+  .home .slideshow_container {
+    .slideshow_description_box {
+      padding: 10px 0;
+    }
+  }
+}
 
 /* Project Category
 -------------------------------------------------------------- */
@@ -890,10 +898,14 @@ header {
 
 /* Footer
 -------------------------------------------------------------- */
-#footer p {
+#footer {
   width:100%;
-  padding-top:20px;
-  border-top:3px #CCC dotted;
   position:relative;
   z-index:999;
+
+  p {
+    border-top:3px #CCC dotted;
+    padding-top:20px;
+    margin: 0 30px;
+  }
 }
