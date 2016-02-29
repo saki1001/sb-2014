@@ -761,15 +761,17 @@ header h1 a {
 }
 /* line 833, ../scss/default.main.scss */
 .page-id-4 #content ul {
+  margin-left: 0px;
   margin-bottom: 40px;
 }
-/* line 836, ../scss/default.main.scss */
+/* line 837, ../scss/default.main.scss */
 .page-id-4 #content ul li {
   width: 100%;
+  padding-left: 0px;
   margin-bottom: 15px;
   overflow: hidden;
 }
-/* line 844, ../scss/default.main.scss */
+/* line 846, ../scss/default.main.scss */
 .page-id-4 #content ul li .col1,
 .page-id-4 #content ul li .col2,
 .page-id-4 #content ul li .col3,
@@ -777,58 +779,77 @@ header h1 a {
   margin-right: 2%;
   float: left;
 }
-/* line 849, ../scss/default.main.scss */
+/* line 851, ../scss/default.main.scss */
 .page-id-4 #content ul li .col1 {
   width: 28%;
 }
-/* line 854, ../scss/default.main.scss */
+/* line 856, ../scss/default.main.scss */
 .page-id-4 #content ul li .col2,
 .page-id-4 #content ul li .col4 {
   width: 20%;
 }
-/* line 858, ../scss/default.main.scss */
+/* line 860, ../scss/default.main.scss */
 .page-id-4 #content ul li .col3 {
   width: 24%;
 }
-/* line 863, ../scss/default.main.scss */
+/* line 865, ../scss/default.main.scss */
 .page-id-4 #content ul li .title h4 {
   font-size: 1.6em;
   margin-bottom: 5px;
 }
-/* line 868, ../scss/default.main.scss */
+/* line 870, ../scss/default.main.scss */
 .page-id-4 #content ul li .title .note {
   font-size: 1.2em;
   margin-bottom: 10px;
   display: block;
 }
 
+@media (max-width: 767px) {
+  /* line 886, ../scss/default.main.scss */
+  .page-id-4 #content ul li {
+    margin-bottom: 35px;
+  }
+  /* line 892, ../scss/default.main.scss */
+  .page-id-4 #content ul li .col1,
+  .page-id-4 #content ul li .col2,
+  .page-id-4 #content ul li .col3,
+  .page-id-4 #content ul li .col4 {
+    width: 100%;
+    margin-right: 0;
+    float: none;
+  }
+  /* line 899, ../scss/default.main.scss */
+  .page-id-4 #content ul li .title h4 {
+    margin-bottom: 0;
+  }
+}
 /* Page - Contact
 -------------------------------------------------------------- */
-/* line 883, ../scss/default.main.scss */
+/* line 914, ../scss/default.main.scss */
 .page-id-6 #content a {
   color: #E66168;
 }
-/* line 886, ../scss/default.main.scss */
+/* line 917, ../scss/default.main.scss */
 .page-id-6 #content a:hover {
   color: #666;
 }
 
 /* Content No Found
 -------------------------------------------------------------- */
-/* line 895, ../scss/default.main.scss */
+/* line 926, ../scss/default.main.scss */
 #content .not-found {
   font-size: 1.6em;
 }
 
 /* Footer
 -------------------------------------------------------------- */
-/* line 901, ../scss/default.main.scss */
+/* line 932, ../scss/default.main.scss */
 #footer {
   width: 100%;
   position: relative;
   z-index: 999;
 }
-/* line 906, ../scss/default.main.scss */
+/* line 937, ../scss/default.main.scss */
 #footer p {
   border-top: 3px #CCC dotted;
   padding-top: 20px;

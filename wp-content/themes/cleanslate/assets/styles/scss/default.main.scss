@@ -831,10 +831,12 @@ header {
     }
     
     ul {
+      margin-left: 0px;
       margin-bottom: 40px;
       
       li {
         width:100%;
+        padding-left: 0px;
         margin-bottom:15px;
         overflow:hidden;
         
@@ -875,6 +877,35 @@ header {
     }
   }
 }
+
+// Screen Medium and Down
+@media (max-width: $screen-sm-max) {
+  .page-id-4 {
+    #content {
+      ul {
+        li {
+          margin-bottom:35px;
+
+          .col1,
+          .col2,
+          .col3,
+          .col4 {
+            width:100%;
+            margin-right:0;
+            float:none;
+          }
+
+          .title {
+            h4 {
+              margin-bottom:0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 /* Page - Contact

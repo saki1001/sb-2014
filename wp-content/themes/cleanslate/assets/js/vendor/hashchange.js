@@ -111,7 +111,7 @@ jQuery(function($) {
 
               // Animated Scroll
               $('html, body').animate({
-                  scrollTop: $(this).offset().top - 30
+                  scrollTop: $(this).offset().top - 60
               }, 1000, function() {
 
                 if( processed === 0 ) {
